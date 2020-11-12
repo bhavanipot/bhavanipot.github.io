@@ -1,2 +1,3 @@
-@import "minima/skins/{{ site.minima.skin | default: 'classic' }}";
-@import "minima/initialize";
+h1 {
+  background: blue
+}
