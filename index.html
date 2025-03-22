@@ -10,7 +10,7 @@
         body {
             font-family: "Raleway", sans-serif;
             margin: 0;
-            background-color: white;
+            background-color: #f5f5dc; /* Beige color for the background */
             color: black;
             display: flex;
             flex-direction: column;
@@ -41,24 +41,45 @@
             color: #007bff;
         }
 
-        /* Background header section */
+        /* Typing animation for Bhavani */
+        .typing {
+            font-size: 4em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid black; /* Cursor effect */
+            width: 0;
+            animation: typing 4s steps(10) 1s forwards, blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 15em; /* Adjust the width to match the length of "Bhavani" */
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Header section with background */
         .header-section {
             height: 100vh;
-            background-image: url('https://example.com/animated-background.gif'); /* Replace with your own animated image URL */
-            background-size: cover;
-            background-position: center;
-            color: white;
+            background-color: #f5f5dc; /* Beige background for the header */
+            color: black;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            flex-direction: column;
             position: relative;
-        }
-
-        .header-text {
-            font-size: 4em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .header-description {
@@ -75,7 +96,7 @@
         }
 
         .card {
-            background: #f0f0f0;
+            background: white; /* White background for each section */
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
@@ -86,13 +107,13 @@
             margin-top: 0;
         }
 
-        /* Scroll animations for each section */
+        /* Sections with scroll effects */
         .section {
             padding: 60px 20px;
-            background-color: #f8f9fa;
             margin-bottom: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
         }
 
         .section h2 {
@@ -111,6 +132,8 @@
 
     <!-- Top Bar Navigation -->
     <div class="navbar">
+        <span style="font-size: 1.5em;">Bhavani</span>
+        <div style="flex-grow: 1;"></div> <!-- This creates a space between name and sections -->
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
@@ -119,11 +142,11 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Header Section with Background Image -->
+    <!-- Header Section with Typing Effect and Slogan -->
     <div class="header-section">
-        <div>
-            <div class="header-text">Bhavani Potdar</div>
-            <div class="header-description">Computer Engineering Student | Innovator | Problem Solver</div>
+        <div class="typing">Bhavani</div>
+        <div class="header-description">
+            Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack Always exploring new technologies!
         </div>
     </div>
 
