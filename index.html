@@ -9,17 +9,36 @@
     <style>
         body { 
             font-family: "Raleway", sans-serif; 
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            text-align: center;
+            background: white;
+            color: black;
+            margin: 0;
+            display: flex;
         }
-        .container {
-            max-width: 1000px;
-            margin: auto;
+        .sidebar {
+            width: 250px;
+            background: #f8f9fa;
             padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .sidebar a:hover {
+            background: #ddd;
+            border-radius: 5px;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            max-width: 900px;
         }
         .header {
-            font-size: 3.5em;
+            font-size: 3em;
             font-weight: bold;
             margin-bottom: 10px;
         }
@@ -27,50 +46,58 @@
             font-size: 1.2em;
             margin: 20px 0;
         }
-        .highlight {
-            color: #FFD700;
-            font-weight: bold;
-        }
         .card {
-            background: rgba(255, 255, 255, 0.2);
+            background: #f0f0f0;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
         }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 15px;
-            font-size: 1em;
-            color: white;
-            background: #ff6600;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .button:hover {
-            background: #ff4500;
-        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="sidebar">
+        <h2>Navigation</h2>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#mywork">My Work</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#contact">Contact</a>
+    </div>
+    
+    <div class="content">
         <h1 class="header">Bhavani Potdar</h1>
-        <p class="bio">Hi there, I'm <span class="highlight">Bhavani</span>! 👋</p>
-        <p class="bio">I’m a <span class="highlight">Computer Engineering</span> student at the <span class="highlight">University of Waterloo</span> passionate about machine learning, embedded systems, and algorithm development. I love solving complex problems at the intersection of technology and innovation.</p>
-        <div class="card">
-            <p>🔭 Passionate about computer science and how it can solve real-world problems.</p>
-            <p>💡 Developed <span class="highlight">PlateCheck</span>, an app providing gender-specific nutritional insights using Python and React.</p>
-            <p>🧠 Worked on <span class="highlight">machine learning for predictive diagnosis</span>, focusing on healthcare applications like hypothyroidism detection.</p>
-            <p>⚡ Built a <span class="highlight">text-to-Braille conversion system</span> using STM32 microcontrollers and C++.</p>
+        <p class="bio">Hi there, I'm <strong>Bhavani</strong>! 👋</p>
+        <p class="bio">I’m a <strong>Computer Engineering</strong> student at the <strong>University of Waterloo</strong> passionate about machine learning, embedded systems, and algorithm development. I love solving complex problems at the intersection of technology and innovation.</p>
+        
+        <div id="about" class="card">
+            <h2>About</h2>
+            <p>🔭 Passionate about computer science and its applications to real-world problems.</p>
+            <p>🧠 Worked on <strong>machine learning for predictive diagnosis</strong>, focusing on healthcare applications like hypothyroidism detection.</p>
+        </div>
+        
+        <div id="portfolio" class="card">
+            <h2>Portfolio</h2>
+            <p>💡 Developed <strong>PlateCheck</strong>, an app providing gender-specific nutritional insights using Python and React.</p>
+            <p>⚡ Built a <strong>text-to-Braille conversion system</strong> using STM32 microcontrollers and C++.</p>
+        </div>
+        
+        <div id="mywork" class="card">
+            <h2>My Work</h2>
             <p>📡 Interested in space research, signal processing, and adaptive transmission systems.</p>
-            <p>🖥️ Experienced in <span class="highlight">C++, Python, Java, HTML, and CSS</span>, with a strong foundation in algorithm development.</p>
             <p>📚 Exploring computational problem-solving, biomedical engineering applications, and advanced algorithms.</p>
-            <p>🚀 Seeking internship opportunities in <span class="highlight">machine learning, embedded systems, and software development</span> to apply my skills and gain hands-on experience.</p>
+        </div>
+        
+        <div id="highlights" class="card">
+            <h2>Highlights</h2>
+            <p>🚀 Seeking internship opportunities in <strong>machine learning, embedded systems, and software development</strong>.</p>
             <p>✨ Excited to take on new challenges, collaborate with others, and continuously learn new skills.</p>
         </div>
-        <button class="button">Explore My Work</button>
+        
+        <div id="contact" class="card">
+            <h2>Contact</h2>
+            <p>Email: <strong>your.email@example.com</strong></p>
+            <p>LinkedIn: <strong><a href="#">linkedin.com/in/bhavanipotdar</a></strong></p>
+        </div>
     </div>
 </body>
 </html>
