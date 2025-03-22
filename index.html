@@ -1,195 +1,76 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<title>Bhavani Potdar</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-</style>
-<body class="w3-light-blue">
-
-<!-- w3-content defines a container for fixed size centered content, 
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
-
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1 class="ml1">
-  <span class="text-wrapper">
-    <span class="line line1"></span>
-    <span class="letters">BHAVANI</span>
-    <span class="line line2"></span>
-  </span>
-</h1>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    
-<style>
-           .ml1 {
-      font-weight: 900;
-      font-size: 3.5em;
-    }
-
-    .ml1 .letter {
-      display: inline-block;
-      line-height: 1em;
-    }
-
-    .ml1 .text-wrapper {
-      position: relative;
-      display: inline-block;
-      padding-top: 0.1em;
-      padding-right: 0.05em;
-      padding-bottom: 0.15em;
-    }
-
-    .ml1 .line {
-      opacity: 0;
-      position: absolute;
-      left: 0;
-      height: 3px;
-      width: 100%;
-      background-color: #033;
-      transform-origin: 0 0;
-    }
-
-    .ml1 .line1 { top: 0; }
-    .ml1 .line2 { bottom: 0; }
-</style>
-    
-    
-<script>
-     anime.timeline({loop: true})
-  .add({
-    targets: '.ml1 .letter',
-    scale: [0.3,1],
-    opacity: [0,1],
-    translateZ: 0,
-    easing: "easeOutExpo",
-    duration: 600,
-    delay: (el, i) => 70 * (i+1)
-  }).add({
-    targets: '.ml1 .line',
-    scaleX: [0,1],
-    opacity: [0.5,1],
-    easing: "easeOutExpo",
-    duration: 700,
-    offset: '-=875',
-    delay: (el, i, l) => 80 * (l - i)
-  }).add({
-    targets: '.ml1',
-    opacity: 0,
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 1000
-  });
-</script>
-  <p>Hello I am Bhavani Potdar! I strive to make a difference by promoting computer science and more women in STEM fields. This website is an fully-focused computer science blog, where I regularly update about topics that I am interested in. I hope you enjoy! Welcome to the blog of <span class="w3-tag">Bhavani</span></p>
-</header>
-
-
-
-<!-- Grid -->
-<div class="w3-row">
-
-<!-- Introduction menu -->
-<div class="w4-col 20">
-  <!-- About Card -->
-  <div class="w3-card w10-margin w3-margin-top">
-    <div class="w3-container w3-white">
-      <h4><b>Bhavani</b></h4>
-      <p>I strive to make a difference by promoting computer science and more women in STEM fields. This website is an fully-focused computer science blog, where I regularly update about topics that I am interested in. I hope you enjoy!</p>
-    </div>
-</div><hr>
-  
-<!-- Posts -->
-<div class="w3-card w10-margin">
-<div class="w3-container w3-padding">
-  <h4>Popular Posts</h4>
-  </div>
-   <ul class="w3-ul w3-hoverable w3-white">
-     <li class="w3-padding-16">
-       <span class="w3-large">Gender Gap</span><br>
-       <span>the gender gap in stem</span>
-     </li>
-     <li class="w3-padding-16">
-       <span class="w3-large">Introduction</span><br>
-       <span>A bit about me :)</span>
-     </li> 
-     <li class="w3-padding-16">
-       <span class="w3-large">Python</span><br>
-       <span>One of the most popular languages.</span>
-     </li>   
-     <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-       <span class="w3-large">JavaScript</span><br>
-       <span>From Animation to Back-End JavaScript has it all!</span>
-     </li>  
-   </ul>
- </div>
- <hr> 
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>Introduction</b></h3>
-      <h5>Here is just a little bit about me! <span class="w3-opacity">April 7, 2014</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>Hello!</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+<head>
+    <title>Bhavani Potdar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <style>
+        body { 
+            font-family: "Raleway", sans-serif; 
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .bio {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 15px;
+            font-size: 1em;
+            color: white;
+            background: #ff6600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Bhavani Potdar</h1>
+        <p class="bio">Hi there, I'm <span class="highlight">Bhavani</span>! 👋</p>
+        <p class="bio">I’m a <span class="highlight">Computer Engineering</span> student at the <span class="highlight">University of Waterloo</span> passionate about machine learning, embedded systems, and algorithm development. I love solving complex problems at the intersection of technology and innovation.</p>
+        <div class="card">
+            <p>🔭 Passionate about computer science and how it can solve real-world problems.</p>
+            <p>💡 Developed <span class="highlight">PlateCheck</span>, an app providing gender-specific nutritional insights using Python and React.</p>
+            <p>🧠 Worked on <span class="highlight">machine learning for predictive diagnosis</span>, focusing on healthcare applications like hypothyroidism detection.</p>
+            <p>⚡ Built a <span class="highlight">text-to-Braille conversion system</span> using STM32 microcontrollers and C++.</p>
+            <p>📡 Interested in space research, signal processing, and adaptive transmission systems.</p>
+            <p>🖥️ Experienced in <span class="highlight">C++, Python, Java, HTML, and CSS</span>, with a strong foundation in algorithm development.</p>
+            <p>📚 Exploring computational problem-solving, biomedical engineering applications, and advanced algorithms.</p>
+            <p>🚀 Seeking internship opportunities in <span class="highlight">machine learning, embedded systems, and software development</span> to apply my skills and gain hands-on experience.</p>
+            <p>✨ Excited to take on new challenges, collaborate with others, and continuously learn new skills.</p>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-        </div>
-      </div>
+        <button class="button">Explore My Work</button>
     </div>
-  </div>
-  <hr>
-
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <div class="w3-container">
-      <h3><b>Gender Gap</b></h3>
-      <h5>The ‘Gender Gap’ is the name refering to the lack of girls in the male-dominated STEM industry, you can see me writing and working towards helping solve this problem. <span class="w3-opacity">April 2, 2014</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>Under Construction</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
-
-<!-- END Introduction Menu -->
-</div>
-
-<!-- END GRID -->
-</div><br>
-
-<!-- END w3-content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w-10-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w10-margin-bottom">Next »</button>
-  <p>Template by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
 </body>
-</html>
-
-  </body>
 </html>
