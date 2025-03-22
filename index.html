@@ -7,41 +7,73 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <style>
-        body { 
-            font-family: "Raleway", sans-serif; 
-            background: white;
-            color: black;
+        body {
+            font-family: "Raleway", sans-serif;
             margin: 0;
-            display: flex;
-        }
-        .sidebar {
-            width: 250px;
-            background: #f8f9fa;
-            padding: 20px;
-            height: 100vh;
-            position: fixed;
-        }
-        .sidebar a {
-            display: block;
-            padding: 10px;
+            background-color: white;
             color: black;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Top bar navigation */
+        .navbar {
+            width: 100%;
+            background: #f8f9fa;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar a {
             text-decoration: none;
+            color: black;
             font-size: 1.2em;
+            padding: 10px;
         }
-        .sidebar a:hover {
-            background: #ddd;
-            border-radius: 5px;
+        
+        .navbar a:hover {
+            color: #007bff;
         }
+
+        /* Background header section */
+        .header-section {
+            height: 100vh;
+            background-image: url('https://example.com/animated-background.gif'); /* Replace with your own animated image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-text {
+            font-size: 4em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-description {
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
         .content {
-            margin-left: 270px;
+            margin-top: 80px; /* Space for the fixed navbar */
             padding: 20px;
             max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .header {
-            font-size: 3em;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+
         .card {
             background: #f0f0f0;
             padding: 20px;
@@ -49,22 +81,36 @@
             margin-top: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .card h2 {
             margin-top: 0;
         }
-        .sidebar a:hover {
-            background-color: #6c757d;
-            color: white;
-            transition: background-color 0.3s;
+
+        /* Scroll animations for each section */
+        .section {
+            padding: 60px 20px;
+            background-color: #f8f9fa;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .card p {
-            padding-left: 20px;
+
+        .section h2 {
+            margin-top: 0;
+        }
+
+        /* Navbar sticky effect */
+        .navbar.sticky {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Navigation</h2>
+
+    <!-- Top Bar Navigation -->
+    <div class="navbar">
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#skills">Skills</a>
@@ -72,28 +118,36 @@
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
     </div>
-    
+
+    <!-- Header Section with Background Image -->
+    <div class="header-section">
+        <div>
+            <div class="header-text">Bhavani Potdar</div>
+            <div class="header-description">Computer Engineering Student | Innovator | Problem Solver</div>
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
     <div class="content">
-        <h1 class="header">Bhavani Potdar</h1>
         
-        <div id="about" class="card">
+        <div id="about" class="section card">
             <h2>About</h2>
             <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
         </div>
-        
-        <div id="education" class="card">
+
+        <div id="education" class="section card">
             <h2>Education</h2>
             <p><strong>University of Waterloo</strong> – BASc Honors Computer Engineering (Academic Standing: Distinction)</p>
         </div>
-        
-        <div id="skills" class="card">
+
+        <div id="skills" class="section card">
             <h2>Skills</h2>
             <p><strong>Programming Languages:</strong> Python, C++, Java, JavaScript, HTML5/CSS3</p>
             <p><strong>Frameworks:</strong> React, Flask, TensorFlow, Scikit-learn, Pandas, NumPy, spaCy, NLTK, RESTful APIs</p>
             <p><strong>Platforms & Tools:</strong> Git, GitHub, GitLab, Microsoft Office, Figma, Jupyter Notebooks, VS Code</p>
         </div>
-        
-        <div id="projects" class="card">
+
+        <div id="projects" class="section card">
             <h2>Projects</h2>
             <ul>
                 <li><strong>PlateCheck</strong> – A Python & React-based app for personalized nutritional analysis (Winner of UWaterloo WIE Hackathon).</li>
@@ -102,8 +156,8 @@
                 <li><strong>Text-to-Braille Conversion System</strong> – Developed using STM32 microcontrollers and C++ for accessibility.</li>
             </ul>
         </div>
-        
-        <div id="experience" class="card">
+
+        <div id="experience" class="section card">
             <h2>Experience</h2>
             <ul>
                 <li><strong>Hackergal Canada (Student Ambassador)</strong> – Led coding workshops & hackathons to inspire girls in STEM.</li>
@@ -111,8 +165,8 @@
                 <li><strong>AFS & University of Pennsylvania</strong> – Scholar in Global STEM Accelerators, focusing on innovation & impact.</li>
             </ul>
         </div>
-        
-        <div id="contact" class="card">
+
+        <div id="contact" class="section card">
             <h2>Contact</h2>
             <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
             <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
