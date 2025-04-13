@@ -7,27 +7,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-bg: #f2f1e1;
-      --main-text: #000;
+      --main-bg: #f9f9fc;
+      --main-text: #1a1a1a;
       --accent: #6a5acd;
-      --section-bg: #fefefe;
+      --section1: #ffffff;
+      --section2: #f4f1ff;
+      --section3: #e8f0fe;
+      --section4: #fef9ec;
     }
 
     * {
       box-sizing: border-box;
     }
 
-    body {
-      font-family: "Poppins", sans-serif;
+    html, body {
       margin: 0;
-      background-color: var(--main-bg);
-      color: var(--main-text);
+      padding: 0;
+      font-family: "Poppins", sans-serif;
       scroll-behavior: smooth;
-    }
-
-    body.lavender-mode {
-      --main-bg: #E6E6FA;
-      --main-text: #333;
+      background: var(--main-bg);
+      color: var(--main-text);
     }
 
     .navbar {
@@ -42,8 +41,6 @@
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       font-weight: 600;
-      flex-wrap: wrap;
-      gap: 10px;
     }
 
     .navbar a {
@@ -67,24 +64,22 @@
 
     .header-section {
       height: 100vh;
-      background: linear-gradient(145deg, var(--main-bg), #fff);
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       flex-direction: column;
-      padding-top: 60px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 0 20px;
+      background: linear-gradient(to bottom right, #e3e0ff, #ffffff);
     }
 
     .typing {
       font-size: 4em;
       font-weight: bold;
+      border-right: 3px solid var(--main-text);
       white-space: nowrap;
       overflow: hidden;
       animation: typing 4s steps(15) 1s forwards, blink 0.75s step-end infinite;
-      border-right: 3px solid var(--main-text);
     }
 
     @keyframes typing {
@@ -97,25 +92,28 @@
     }
 
     .content {
-      padding: 100px 20px 60px;
-      max-width: 1100px;
-      margin: auto;
+      margin-top: 80px;
     }
 
-    .section {
-      padding: 60px 0;
-      background-color: var(--section-bg);
+    section {
+      padding: 80px 20px;
       transition: background-color 0.4s ease;
     }
 
-    .section h2 {
-      font-size: 2.5em;
+    #about { background-color: var(--section1); }
+    #skills { background-color: var(--section2); }
+    #projects { background-color: var(--section3); }
+    #experience { background-color: var(--section4); }
+    #contact { background-color: var(--section1); }
+
+    h2 {
       text-align: center;
-      margin-bottom: 30px;
+      font-size: 2.8em;
+      margin-bottom: 40px;
       color: var(--accent);
     }
 
-    #about {
+    .about-content {
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
@@ -124,19 +122,17 @@
     }
 
     @media(min-width: 768px) {
-      #about {
+      .about-content {
         flex-direction: row;
         text-align: left;
+        justify-content: center;
       }
     }
 
     .about-img img {
-      max-width: 250px;
-      border-radius: 20px;
-    }
-
-    #skills {
-      text-align: center;
+      width: 220px;
+      border-radius: 50%;
+      border: 6px solid var(--accent);
     }
 
     .skills-grid {
@@ -147,89 +143,96 @@
     }
 
     .skills-grid span {
-      background: #e3e3ff;
+      background: white;
       border: 2px solid var(--accent);
       color: #333;
       padding: 10px 15px;
       border-radius: 30px;
       font-size: 1em;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .skills-grid span:hover {
       transform: scale(1.1);
+      background: var(--accent);
+      color: #fff;
     }
 
     .project-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      gap: 40px;
+      padding: 0 20px;
     }
 
     .project-card {
-      background: white;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+      transform: translateY(30px);
       opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition: all 0.6s ease-out;
     }
 
     .project-card.visible {
-      opacity: 1;
       transform: translateY(0);
+      opacity: 1;
     }
 
-    #experience-columns {
+    .project-card:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .experience-flex {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 30px;
     }
 
-    .experience-column {
-      flex: 1;
-      min-width: 250px;
-      max-width: 350px;
-      background: #fff;
-      border-radius: 12px;
+    .experience-item {
+      flex: 1 1 250px;
+      max-width: 300px;
+      background: white;
       padding: 20px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
       transition: transform 0.3s;
     }
 
-    .experience-column:hover {
-      transform: translateY(-5px);
+    .experience-item:hover {
+      transform: scale(1.03);
     }
 
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
       max-width: 500px;
       margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
     input, textarea {
       padding: 12px;
-      font-family: inherit;
-      border: 1px solid #ccc;
       border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
     }
 
     button {
       background-color: var(--accent);
       color: white;
-      border: none;
       padding: 12px;
+      border: none;
       border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      font-weight: 600;
+      transition: background 0.3s;
     }
 
     button:hover {
-      background-color: #483d8b;
+      background: #4b42a2;
     }
   </style>
 </head>
@@ -247,22 +250,24 @@
 
   <div class="header-section">
     <div class="typing">Bhavani Potdar</div>
-    <div class="header-description">Front-End Developer | Computer Engineering @ UW | Passionate about clean design, responsive UI, and building seamless user experiences</div>
+    <p style="font-size: 1.4em; max-width: 600px;">Front-End Developer | Computer Engineering @ UW | Designing smooth and impactful web experiences with modern tools and clean code</p>
   </div>
 
   <div class="content">
-    <section id="about" class="section">
-      <div class="about-img">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/University_of_Waterloo_logo.svg/1280px-University_of_Waterloo_logo.svg.png" alt="University of Waterloo logo" />
-      </div>
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
-        <p><strong>University of Waterloo</strong> – Bachelor's of Applied Science in Honors Computer Engineering</p>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/University_of_Waterloo_logo.svg/1280px-University_of_Waterloo_logo.svg.png" alt="University of Waterloo logo" />
+        </div>
+        <div>
+          <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
+          <p><strong>University of Waterloo</strong> – Bachelor's of Applied Science in Honors Computer Engineering</p>
+        </div>
       </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills">
       <h2>Skills</h2>
       <div class="skills-grid">
         <span>Python</span><span>C++</span><span>Java</span><span>JavaScript</span><span>HTML5/CSS3</span>
@@ -272,26 +277,26 @@
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects">
       <h2>Projects</h2>
       <div class="project-grid">
-        <div class="project-card"> <strong>PlateCheck</strong><p>Winner of WIE hackathon. A personalized nutritional app that analyzes food photos using APIs to provide tailored health insights.</p></div>
-        <div class="project-card"> <strong>Podcastify</strong><p>Text-to-podcast web app using NLP summarization with spaCy/Heapq and audio via Speechify. Built with Python, Flask, Vue.js.</p></div>
-        <div class="project-card"> <strong>Hypothyroidism Diagnosis</strong><p>ML model using decision trees to predict hypothyroidism with 97.5% accuracy. Award-winning project presented at a science fair.</p></div>
-        <div class="project-card"> <strong>Text-to-Braille Conversion</strong><p>STM32-based hardware that converts braille to text using LED simulation and SPI protocol. Designed in C++.</p></div>
+        <div class="project-card"><strong>PlateCheck</strong><p>Winner of WIE hackathon. A personalized nutritional app that analyzes food photos using APIs to provide tailored health insights.</p></div>
+        <div class="project-card"><strong>Podcastify</strong><p>Text-to-podcast web app using NLP summarization with spaCy/Heapq and audio via Speechify. Built with Python, Flask, Vue.js.</p></div>
+        <div class="project-card"><strong>Hypothyroidism Diagnosis</strong><p>ML model using decision trees to predict hypothyroidism with 97.5% accuracy. Award-winning project presented at a science fair.</p></div>
+        <div class="project-card"><strong>Text-to-Braille Conversion</strong><p>STM32-based hardware that converts braille to text using LED simulation and SPI protocol. Designed in C++.</p></div>
       </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="experience">
       <h2>Experience</h2>
-      <div id="experience-columns">
-        <div class="experience-column"><strong>Hackergal Canada</strong><p>Ambassador role involving promotion of coding events and creation of resources for nationwide curriculum.</p></div>
-        <div class="experience-column"><strong>NY Academy of Sciences</strong><p>Junior Academy fellow contributing to global innovation challenges and STEM collaboration.</p></div>
-        <div class="experience-column"><strong>UPenn Scholar Program</strong><p>Earned certification in global citizenship and impact strategy through intercultural learning experiences.</p></div>
+      <div class="experience-flex">
+        <div class="experience-item"><strong>Hackergal Canada</strong><p>Ambassador role involving promotion of coding events and creation of resources for nationwide curriculum.</p></div>
+        <div class="experience-item"><strong>NY Academy of Sciences</strong><p>Junior Academy fellow contributing to global innovation challenges and STEM collaboration.</p></div>
+        <div class="experience-item"><strong>UPenn Scholar Program</strong><p>Earned certification in global citizenship and impact strategy through intercultural learning experiences.</p></div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact">
       <h2>Contact Me</h2>
       <form>
         <input type="text" placeholder="Your Name" required />
@@ -299,17 +304,13 @@
         <textarea rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-      <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
-      <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
-      <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
+      <p style="text-align:center; margin-top: 20px;">Email: <strong>bpotdar@uwaterloo.ca</strong><br>
+      LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong><br>
+      GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
     </section>
   </div>
 
   <script>
-    function toggleLavender() {
-      document.body.classList.toggle("lavender-mode");
-    }
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -321,6 +322,10 @@
     document.querySelectorAll('.project-card').forEach(card => {
       observer.observe(card);
     });
+
+    function toggleLavender() {
+      document.body.classList.toggle("lavender-mode");
+    }
   </script>
 </body>
 </html>
