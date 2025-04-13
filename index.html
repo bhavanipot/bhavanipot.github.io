@@ -10,6 +10,11 @@
       --main-bg: #f2f1e1;
       --main-text: #000;
       --accent: #6a5acd;
+      --section-bg: #fefefe;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
@@ -17,6 +22,7 @@
       margin: 0;
       background-color: var(--main-bg);
       color: var(--main-text);
+      scroll-behavior: smooth;
     }
 
     body.lavender-mode {
@@ -45,6 +51,7 @@
       color: #333;
       font-size: 1.1em;
       padding: 10px 15px;
+      transition: color 0.3s;
     }
 
     .navbar a:hover {
@@ -55,6 +62,7 @@
       font-size: 1.8em;
       font-weight: 600;
       cursor: pointer;
+      transition: color 0.3s;
     }
 
     .header-section {
@@ -66,15 +74,17 @@
       text-align: center;
       flex-direction: column;
       padding-top: 60px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     .typing {
       font-size: 4em;
       font-weight: bold;
-      border-right: 3px solid black;
       white-space: nowrap;
       overflow: hidden;
       animation: typing 4s steps(15) 1s forwards, blink 0.75s step-end infinite;
+      border-right: 3px solid var(--main-text);
     }
 
     @keyframes typing {
@@ -87,88 +97,122 @@
     }
 
     .content {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
+      padding: 100px 20px 60px;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .section {
-      margin-bottom: 60px;
+      padding: 60px 0;
+      background-color: var(--section-bg);
+      transition: background-color 0.4s ease;
+    }
+
+    .section h2 {
+      font-size: 2.5em;
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--accent);
     }
 
     #about {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 30px;
+      text-align: center;
     }
 
     @media(min-width: 768px) {
       #about {
         flex-direction: row;
-        align-items: center;
+        text-align: left;
       }
     }
 
-    .about-text {
-      flex: 2;
-    }
-
-    .about-img {
-      flex: 1;
-    }
-
     .about-img img {
-      width: 100%;
+      max-width: 250px;
       border-radius: 20px;
     }
 
-    #skills span {
-      background: #eee;
-      border-radius: 20px;
-      padding: 6px 12px;
-      margin: 5px;
-      display: inline-block;
+    #skills {
+      text-align: center;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .skills-grid span {
+      background: #e3e3ff;
+      border: 2px solid var(--accent);
+      color: #333;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 1em;
+      transition: transform 0.3s ease;
+    }
+
+    .skills-grid span:hover {
+      transform: scale(1.1);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     #experience-columns {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+      justify-content: center;
     }
 
     .experience-column {
       flex: 1;
       min-width: 250px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-
-    .project-card {
-      background: #ffffff;
-      border-left: 6px solid var(--accent);
-      padding: 20px;
+      max-width: 350px;
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
     }
 
-    .project-card:hover {
+    .experience-column:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.1);
     }
 
     form {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      max-width: 500px;
+      margin: auto;
     }
 
     input, textarea {
-      padding: 10px;
+      padding: 12px;
       font-family: inherit;
       border: 1px solid #ccc;
       border-radius: 6px;
@@ -178,9 +222,10 @@
       background-color: var(--accent);
       color: white;
       border: none;
-      padding: 10px;
+      padding: 12px;
       border-radius: 6px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
 
     button:hover {
@@ -206,7 +251,7 @@
   </div>
 
   <div class="content">
-    <div id="about" class="section">
+    <section id="about" class="section">
       <div class="about-img">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/University_of_Waterloo_logo.svg/1280px-University_of_Waterloo_logo.svg.png" alt="University of Waterloo logo" />
       </div>
@@ -215,56 +260,38 @@
         <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
         <p><strong>University of Waterloo</strong> – Bachelor's of Applied Science in Honors Computer Engineering</p>
       </div>
-    </div>
+    </section>
 
-    <div id="skills" class="section">
+    <section id="skills" class="section">
       <h2>Skills</h2>
-      <p><strong>Programming Languages:</strong> <span>Python</span> <span>C++</span> <span>Java</span> <span>JavaScript</span> <span>HTML5/CSS3</span></p>
-      <p><strong>Frameworks:</strong> <span>React</span> <span>Flask</span> <span>TensorFlow</span> <span>Scikit-learn</span> <span>Pandas</span> <span>NumPy</span> <span>spaCy</span> <span>NLTK</span> <span>RESTful APIs</span></p>
-      <p><strong>Platforms & Tools:</strong> <span>Git</span> <span>GitHub</span> <span>GitLab</span> <span>Microsoft Office</span> <span>Figma</span> <span>Jupyter Notebooks</span> <span>VS Code</span></p>
-    </div>
+      <div class="skills-grid">
+        <span>Python</span><span>C++</span><span>Java</span><span>JavaScript</span><span>HTML5/CSS3</span>
+        <span>React</span><span>Flask</span><span>TensorFlow</span><span>Scikit-learn</span><span>Pandas</span>
+        <span>NumPy</span><span>spaCy</span><span>NLTK</span><span>RESTful APIs</span>
+        <span>Git</span><span>GitHub</span><span>GitLab</span><span>VS Code</span><span>Figma</span>
+      </div>
+    </section>
 
-    <div id="projects" class="section">
+    <section id="projects" class="section">
       <h2>Projects</h2>
       <div class="project-grid">
-        <div class="project-card">
-          <strong>PlateCheck</strong>
-          <p>PlateCheck, the winner of the Women in Engineering (WIE) hackathon, is a personalized nutritional app aimed at addressing nutrition gaps and promoting women’s overall health. The application allows users to upload a photo of their food, which is analyzed through APIs to identify its nutritional content and provide tailored recommendations.</p>
-        </div>
-        <div class="project-card">
-          <strong>Podcastify</strong>
-          <p>Podcastify is a full-stack web application that transforms text input, such as textbooks (PDF/DOCX), into engaging audio podcasts using NLP and AI-driven summarization. Built with Python, Flask, Vue.js, and JavaScript. Includes chatbot functionality, summarization with spaCy/Heapq, and audio generation via Speechify.</p>
-        </div>
-        <div class="project-card">
-          <strong>Hypothyroidism Diagnosis</strong>
-          <p>Developed a machine learning model to assist in early detection of hypothyroidism using decision tree classifiers. Achieved 97.5% accuracy. Won the University of Calgary's Women Award for Outstanding Academic Achievement and Silver Medal at Calgary Youth Science Fair.</p>
-        </div>
-        <div class="project-card">
-          <strong>Text-to-Braille Conversion System</strong>
-          <p>Built an embedded Braille-to-Text converter using STM32 and C++, with dynamic LED representation for Braille dots. Implemented using SPI communication to facilitate component interaction for accessible hardware design.</p>
-        </div>
+        <div class="project-card"> <strong>PlateCheck</strong><p>Winner of WIE hackathon. A personalized nutritional app that analyzes food photos using APIs to provide tailored health insights.</p></div>
+        <div class="project-card"> <strong>Podcastify</strong><p>Text-to-podcast web app using NLP summarization with spaCy/Heapq and audio via Speechify. Built with Python, Flask, Vue.js.</p></div>
+        <div class="project-card"> <strong>Hypothyroidism Diagnosis</strong><p>ML model using decision trees to predict hypothyroidism with 97.5% accuracy. Award-winning project presented at a science fair.</p></div>
+        <div class="project-card"> <strong>Text-to-Braille Conversion</strong><p>STM32-based hardware that converts braille to text using LED simulation and SPI protocol. Designed in C++.</p></div>
       </div>
-    </div>
+    </section>
 
-    <div id="experience" class="section">
+    <section id="experience" class="section">
       <h2>Experience</h2>
       <div id="experience-columns">
-        <div class="experience-column">
-          <strong>Hackergal Canada (Student Ambassador)</strong>
-          <p>Organized hackathons and created educational coding content accessed by students nationwide.</p>
-        </div>
-        <div class="experience-column">
-          <strong>The Junior Academy – NY Academy of Sciences</strong>
-          <p>Collaborated globally to solve real-world STEM problems with researchers and professionals.</p>
-        </div>
-        <div class="experience-column">
-          <strong>AFS & University of Pennsylvania</strong>
-          <p>Earned a certificate in Global Citizenship while exploring sustainable design and intercultural innovation.</p>
-        </div>
+        <div class="experience-column"><strong>Hackergal Canada</strong><p>Ambassador role involving promotion of coding events and creation of resources for nationwide curriculum.</p></div>
+        <div class="experience-column"><strong>NY Academy of Sciences</strong><p>Junior Academy fellow contributing to global innovation challenges and STEM collaboration.</p></div>
+        <div class="experience-column"><strong>UPenn Scholar Program</strong><p>Earned certification in global citizenship and impact strategy through intercultural learning experiences.</p></div>
       </div>
-    </div>
+    </section>
 
-    <div id="contact" class="section">
+    <section id="contact" class="section">
       <h2>Contact Me</h2>
       <form>
         <input type="text" placeholder="Your Name" required />
@@ -275,13 +302,25 @@
       <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
       <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
       <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
-    </div>
+    </section>
   </div>
 
   <script>
     function toggleLavender() {
       document.body.classList.toggle("lavender-mode");
     }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      observer.observe(card);
+    });
   </script>
 </body>
 </html>
