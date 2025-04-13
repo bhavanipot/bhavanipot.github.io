@@ -1,434 +1,394 @@
 <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Bhavani Potdar</title>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-   <style>
- 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bhavani Potdar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
- :root {
-   --main-bg: #f2f1e1;
-   --main-text: #000;
-   --card-bg: #fff;
- }
- 
- body {
-   font-family: "Poppins", sans-serif;
-   margin: 0;
-   background-color: var(--main-bg);
-   color: var(--main-text);
-   transition: background-color 0.5s ease, color 0.3s ease;
- }
- 
- body.lavender-mode {
-   --main-bg: #E6E6FA;
-   --main-text: #333;
-   --card-bg: #f5f0ff;
- }
- 
- /* Navbar */
- .navbar {
-   width: 100%;
-   background: #fff;
-   padding: 15px 20px;
-   position: fixed;
-   top: 0;
-   z-index: 1000;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   font-weight: 600;
-   flex-wrap: wrap;
-   gap: 10px;
- }
- 
- .navbar a {
-   text-decoration: none;
-   color: #333;
-   font-size: 1.1em;
-   padding: 10px 15px;
-   transition: color 0.3s ease;
- }
- 
- .navbar a:hover {
-   color: #007bff;
- }
- 
- .navbar span {
-   font-size: 1.8em;
-   font-weight: 600;
-   cursor: pointer;
-   transition: color 0.3s;
- }
- 
- .navbar span:hover {
-   color: #6a5acd;
- }
- 
- /* Typing animation */
- .typing {
-   font-size: 4em;
-   font-weight: bold;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-   display: inline-block;
-   white-space: nowrap;
-   overflow: hidden;
-   border-right: 3px solid black;
-   width: 0;
-   animation: typing 4s steps(10) 1s forwards, blink 0.75s step-end infinite;
- }
- 
- @keyframes typing {
-   from { width: 0; }
-   to { width: 15em; }
- }
- 
- @keyframes blink {
-   50% { border-color: transparent; }
- }
- 
- /* Header */
- .header-section {
-   height: 100vh;
-   background: linear-gradient(145deg, var(--main-bg), #fff);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-   flex-direction: column;
-   position: relative;
-   color: #333;
-   padding-top: 60px;
-   transition: background-color 0.5s ease;
- }
- 
- .header-description {
-   font-size: 1.5em;
-   margin-top: 15px;
-   color: #555;
-   line-height: 1.5;
-   max-width: 800px;
-   margin-left: auto;
-   margin-right: auto;
- }
- 
- .content {
-   margin-top: 80px;
-   padding: 0 20px;
-   max-width: 1000px;
-   margin-left: auto;
-   margin-right: auto;
- }
- 
- /* GENERAL CARD BASE */
- .section {
-   background-color: var(--card-bg);
-   padding: 50px;
-   margin: 20px 0;
-   border-radius: 10px;
-   margin: 40px 0;
-   border-radius: 20px;
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
-   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
- }
- 
- .section:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
- }
- 
- .section h2 {
-   margin-top: 0;
-   font-size: 2em;
-   color: #333;
-   font-weight: 600;
- }
- 
- .section p, .section li {
-   font-size: 1.2em;
-   color: #555;
-   line-height: 1.6;
-   margin-bottom: 20px;
- }
- 
- /* About – Split layout */
- /* ABOUT SECTION */
- #about.section {
-   display: flex;
-   flex-direction: column;
- }
- @media(min-width: 768px) {
-   #about.section {
-     flex-direction: row;
-     justify-content: space-between;
-     align-items: center;
-   }
-   #about.section p {
-     width: 60%;
-   }
-   background: linear-gradient(135deg, #ffe6f0, #f9f0ff);
-   border-left: 10px solid #ff66a3;
-   border-radius: 30px;
- }
- 
- /* Education – Timeline style */
- /* EDUCATION SECTION */
- #education.section {
-   border-left: 4px solid #ccc;
-   padding-left: 30px;
-   position: relative;
- }
- #education.section::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   height: 100%;
-   width: 4px;
-   background: linear-gradient(to bottom, #ccc, #aaa);
-   background-color: #e8f1fc;
-   border-left: 8px solid #4da6ff;
-   clip-path: polygon(0% 0%, 100% 10px, 100% 100%, 0% 100%);
- }
- 
- /* Skills – Grid badges */
- /* SKILLS SECTION */
- #skills.section {
-   background-color: #eaffea;
-   border-left: 8px solid #33cc33;
- }
- #skills.section p {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 10px;
- }
- #skills.section strong {
-   width: 100%;
- }
- #skills.section p span {
-   background-color: #f0f0f0;
-   padding: 6px 12px;
-   background-color: #d4f8d4;
-   padding: 8px 14px;
-   border-radius: 20px;
-   font-size: 0.95em;
-   border: 1px solid #ddd;
-   border: 1px solid #a0e6a0;
- }
- 
- /* Projects – Lifted Cards */
- /* PROJECTS SECTION */
- #projects.section {
-   background-color: #fff8e1;
-   border-left: 8px solid #ffc107;
- }
- #projects.section ul {
-   list-style: none;
-   padding: 0;
- }
- #projects.section li {
-   background: #fff;
-   margin-bottom: 20px;
-   padding: 20px;
-   border-left: 5px solid #ffca28;
-   border-radius: 10px;
-   box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
- }
- #projects.section li:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
- }
- 
- /* Experience – Resume-style block */
- #experience.section ul {
-   padding: 0;
-   list-style: none;
- /* EXPERIENCE SECTION */
- #experience.section {
-   background-color: #f4f0ff;
-   border-left: 6px solid #b399ff;
-   position: relative;
- }
- #experience.section li {
-   margin-bottom: 20px;
-   border-left: 4px solid #999;
-   padding-left: 15px;
- }
- #experience.section strong {
-   display: block;
-   font-size: 1.2em;
-   margin-bottom: 4px;
-   border-left: 3px solid #ccc;
- }
- 
- /* Contact – Centered CTA style */
- /* CONTACT SECTION */
- #contact.section {
-   background-color: #fff;
-   text-align: center;
- }
- #contact.section p {
-   font-size: 1.1em;
-   margin-bottom: 10px;
-   border: 3px dashed #b266ff;
-   border-radius: 25px;
- }
- #contact.section a {
-   font-weight: 600;
-   font-weight: bold;
-   color: #6a5acd;
-   text-decoration: none;
-   color: #333;
- }
- #contact.section a:hover {
-   color: #6a5acd;
- }
- 
- /* Responsive adjustments */
- @media screen and (max-width: 768px) {
-   .navbar a {
-     font-size: 1em;
-     padding: 8px 10px;
-   }
-   .header-description {
-     font-size: 1.2em;
-   }
-   text-decoration: underline;
- }
- 
- /* Keep cards white in lavender mode */
- body.lavender-mode .section {
-   background-color: #ffffff !important;
- }
- </style>
- 
- 
-   <!-- Top Bar Navigation -->
-   <div class="navbar">
-   <div class="navbar-left">
-     <span onclick="toggleLavender()">Bhavani</span>
-   </div>
-   <div>
-     <a href="#about">About</a>
-     <a href="#education">Education</a>
-     <a href="#skills">Skills</a>
-     <a href="#projects">Projects</a>
-     <a href="#experience">Experience</a>
-     <a href="#contact">Contact</a>
-   </div>
- </div>
- 
- 
- 
-   <!-- Header Section -->
-   <div class="header-section">
-     <div class="typing">Bhavani Potdar</div>
-     <div class="header-description">
-       Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack. Always exploring new technologies!
-     </div>
-   </div>
- 
-     <!-- Main Content Section -->
-     <div class="content">
- 
-         <div id="about" class="section">
-             <h2>About</h2>
-             <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
-         </div>
- 
-         <div id="education" class="section">
-             <h2>Education</h2>
-             <p><strong>University of Waterloo</strong> – Bachelor's of Applied Science in Honors Computer Engineering </p>
-         </div>
- 
-         <div id="skills" class="section">
-             <h2>Skills</h2>
- 
-           <p><strong>Programming Languages:</strong> 
-   <span>Python</span> <span>C++</span> <span>Java</span> <span>JavaScript</span> <span>HTML5/CSS3</span>
- </p>
-            <p><strong>Frameworks:</strong> 
-   <span>React</span>
-   <span>Flask</span>
-   <span>TensorFlow</span>
-   <span>Scikit-learn</span>
-   <span>Pandas</span>
-   <span>NumPy</span>
-   <span>spaCy</span>
-   <span>NLTK</span>
-   <span>RESTful APIs</span>
- </p>
- 
- <p><strong>Platforms & Tools:</strong> 
-   <span>Git</span>
-   <span>GitHub</span>
-   <span>GitLab</span>
-   <span>Microsoft Office</span>
-   <span>Figma</span>
-   <span>Jupyter Notebooks</span>
-   <span>VS Code</span>
- </p>
- 
-         </div>
- 
-         <div id="projects" class="section">
-             <h2>Projects</h2>
-             <ul>
-                 <li><strong>PlateCheck</strong> – PlateCheck, the winner of the Women in Engineering (WIE) hackathon, is a personalized nutritional app aimed at addressing nutrition gaps and promoting women’s overall health. 
-                     The application allows users to upload a photo of their food, which is analyzed through APIs to identify its nutritional content and provide tailored recommendations. 
-                     The app’s algorithm, developed in Python, calculates a nutritional score based on the identified food items to offer these personalized recommendations. 
-                     The user-friendly interface, built in React and modelled using Figma, allows for easy interaction with the platform, where users can access personalized insights and track their nutritional progress.</li>
-                 <li><strong>Podcastify</strong> – Podcastify is a full-stack web application that transforms text input, such as textbooks (PDF/DOCX), into engaging audio podcasts using natural language processing (NLP) and AI-driven summarization. 
-                     Built with Python, Flask, Vue.js, and JavaScript, the platform employs SpaCy, NLTK, and Heapq for content extraction and summarization. 
-                     The concise summaries are then converted into natural-sounding audio using the Speechify API, enhancing accessibility and user engagement. 
-                     Additionally, Podcastify features an intelligent VoiceFlow-powered chatbot, which learns from input files and provides insightful, context-aware responses to student queries. 
-                     The application’s dynamic frontend supports file uploads, real-time feedback, and efficient routing, while the scalable Flask backend manages file processing, audio generation, and secures API interactions.</li>
-                 <li><strong>Hypothyroidism Diagnosis</strong> – Developed a machine learning model to assist in the early detection of hypothyroidism. Using a dataset containing key clinical identifiers, engineered features and trained a decision tree classifier to identify patterns indicative of the condition. 
-                     The model was evaluated for accuracy, precision, and recall to ensure reliable classification, with an accuracy of 97.5%. 
-                     Through this work, I aimed to demonstrate how machine learning can enhance diagnostic precision and support healthcare professionals in identifying hypothyroidism efficiently. T
-                     his project earned me the University of Calgary's Women Award for Outstanding Academic Achievement and a Silver Medal at the Calgary Youth Science Fair</li>
-                 <li><strong>Text-to-Braille Conversion System</strong> – Developed a Braille-to-Text Conversion System using an STM32 Nucleo64 board (STM32F401RE) to create an accessible solution for visually impaired individuals. 
-                     The system processes Braille input and converts it into corresponding text, displayed dynamically through LEDs (representing Braille dots). 
-                     This was implemented the system using C++, and included SPI communication to ensure smooth interaction between the two microcontroller components.</li>
-             </ul>
-         </div>
- 
-         <div id="experience" class="section">
-             <h2>Experience</h2>
-             <ul>
-                 <li><strong>Hackergal Canada (Student Ambassador)</strong> – Organized, promoted and presented at initiatives like nation-wide hackathons and webinars that worked to inspire girls to explore computer science and technology.
-                     Developed coding tutorials and projects featured on the Hackergal hub and included with the Hackergal curriculum accessed by girls across Canada
- </li>
-                 <li><strong>The Junior Academy – NY Academy of Sciences</strong> – Worked with other fellow young scientists across the world to find innovative solutions addressing real world challenges. 
-                     Built connections with researchers and STEM professionals, gaining insights into advanced scientific methodologies and research.
- </li>
-                 <li><strong>AFS & University of Pennsylvania</strong> – Selected as a scholar for a program focusing on critical STEM skills, global competence, and social impact strategies. 
-                     Gained expertise in sustainable design, intercultural collaboration, and community-driven innovation.
-                     Earned certification in Global Citizenship for Social Impact from UPenn University.</li>
-             </ul>
-         </div>
- 
-         <div id="contact" class="section">
-             <h2>Contact</h2>
-             <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
-             <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
-             <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
-         </div>
-   </div>
- 
- 
- <script>
-   function toggleLavender() {
-     document.body.classList.toggle("lavender-mode");
-   }
- </script>
- 
- </body>
- </html>
- 
+:root {
+  --main-bg: #f2f1e1;
+  --main-text: #000;
+  --card-bg: #fff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+body.lavender-mode {
+  --main-bg: #E6E6FA;
+  --main-text: #333;
+  --card-bg: #f5f0ff;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background: #fff;
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+.navbar span {
+  font-size: 1.8em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar span:hover {
+  color: #6a5acd;
+}
+
+/* Typing animation */
+.typing {
+  font-size: 4em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid black;
+  width: 0;
+  animation: typing 4s steps(10) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 15em; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Header */
+.header-section {
+  height: 100vh;
+  background: linear-gradient(145deg, var(--main-bg), #fff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  color: #333;
+  padding-top: 60px;
+  transition: background-color 0.5s ease;
+}
+
+.header-description {
+  font-size: 1.5em;
+  margin-top: 15px;
+  color: #555;
+  line-height: 1.5;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  margin-top: 80px;
+  padding: 0 20px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  background-color: var(--card-bg);
+  padding: 50px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section h2 {
+  margin-top: 0;
+  font-size: 2em;
+  color: #333;
+  font-weight: 600;
+}
+
+.section p, .section li {
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* About – Split layout */
+#about.section {
+  display: flex;
+  flex-direction: column;
+}
+@media(min-width: 768px) {
+  #about.section {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #about.section p {
+    width: 60%;
+  }
+}
+
+/* Education – Timeline style */
+#education.section {
+  border-left: 4px solid #ccc;
+  padding-left: 30px;
+  position: relative;
+}
+#education.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #ccc, #aaa);
+}
+
+/* Skills – Grid badges */
+#skills.section p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+#skills.section strong {
+  width: 100%;
+}
+#skills.section p span {
+  background-color: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.95em;
+  border: 1px solid #ddd;
+}
+
+/* Projects – Lifted Cards */
+#projects.section ul {
+  list-style: none;
+  padding: 0;
+}
+#projects.section li {
+  background: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#projects.section li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Experience – Resume-style block */
+#experience.section ul {
+  padding: 0;
+  list-style: none;
+}
+#experience.section li {
+  margin-bottom: 20px;
+  border-left: 4px solid #999;
+  padding-left: 15px;
+}
+#experience.section strong {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 4px;
+}
+
+/* Contact – Centered CTA style */
+#contact.section {
+  text-align: center;
+}
+#contact.section p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+#contact.section a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #333;
+}
+#contact.section a:hover {
+  color: #6a5acd;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .navbar a {
+    font-size: 1em;
+    padding: 8px 10px;
+  }
+  .header-description {
+    font-size: 1.2em;
+  }
+}
+
+/* Keep cards white in lavender mode */
+body.lavender-mode .section {
+  background-color: #ffffff !important;
+}
+</style>
+
+
+  <!-- Top Bar Navigation -->
+  <div class="navbar">
+  <div class="navbar-left">
+    <span onclick="toggleLavender()">Bhavani</span>
+  </div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+
+
+  <!-- Header Section -->
+  <div class="header-section">
+    <div class="typing">Bhavani Potdar</div>
+    <div class="header-description">
+      Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack. Always exploring new technologies!
+    </div>
+  </div>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        
+        <div id="about" class="section">
+            <h2>About</h2>
+            <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
+        </div>
+
+        <div id="education" class="section">
+            <h2>Education</h2>
+            <p><strong>University of Waterloo</strong> – Bachelor's of Applied Science in Honors Computer Engineering </p>
+        </div>
+
+        <div id="skills" class="section">
+            <h2>Skills</h2>
+
+          <p><strong>Programming Languages:</strong> 
+  <span>Python</span> <span>C++</span> <span>Java</span> <span>JavaScript</span> <span>HTML5/CSS3</span>
+</p>
+           <p><strong>Frameworks:</strong> 
+  <span>React</span>
+  <span>Flask</span>
+  <span>TensorFlow</span>
+  <span>Scikit-learn</span>
+  <span>Pandas</span>
+  <span>NumPy</span>
+  <span>spaCy</span>
+  <span>NLTK</span>
+  <span>RESTful APIs</span>
+</p>
+
+<p><strong>Platforms & Tools:</strong> 
+  <span>Git</span>
+  <span>GitHub</span>
+  <span>GitLab</span>
+  <span>Microsoft Office</span>
+  <span>Figma</span>
+  <span>Jupyter Notebooks</span>
+  <span>VS Code</span>
+</p>
+
+        </div>
+
+        <div id="projects" class="section">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>PlateCheck</strong> – PlateCheck, the winner of the Women in Engineering (WIE) hackathon, is a personalized nutritional app aimed at addressing nutrition gaps and promoting women’s overall health. 
+                    The application allows users to upload a photo of their food, which is analyzed through APIs to identify its nutritional content and provide tailored recommendations. 
+                    The app’s algorithm, developed in Python, calculates a nutritional score based on the identified food items to offer these personalized recommendations. 
+                    The user-friendly interface, built in React and modelled using Figma, allows for easy interaction with the platform, where users can access personalized insights and track their nutritional progress.</li>
+                <li><strong>Podcastify</strong> – Podcastify is a full-stack web application that transforms text input, such as textbooks (PDF/DOCX), into engaging audio podcasts using natural language processing (NLP) and AI-driven summarization. 
+                    Built with Python, Flask, Vue.js, and JavaScript, the platform employs SpaCy, NLTK, and Heapq for content extraction and summarization. 
+                    The concise summaries are then converted into natural-sounding audio using the Speechify API, enhancing accessibility and user engagement. 
+                    Additionally, Podcastify features an intelligent VoiceFlow-powered chatbot, which learns from input files and provides insightful, context-aware responses to student queries. 
+                    The application’s dynamic frontend supports file uploads, real-time feedback, and efficient routing, while the scalable Flask backend manages file processing, audio generation, and secures API interactions.</li>
+                <li><strong>Hypothyroidism Diagnosis</strong> – Developed a machine learning model to assist in the early detection of hypothyroidism. Using a dataset containing key clinical identifiers, engineered features and trained a decision tree classifier to identify patterns indicative of the condition. 
+                    The model was evaluated for accuracy, precision, and recall to ensure reliable classification, with an accuracy of 97.5%. 
+                    Through this work, I aimed to demonstrate how machine learning can enhance diagnostic precision and support healthcare professionals in identifying hypothyroidism efficiently. T
+                    his project earned me the University of Calgary's Women Award for Outstanding Academic Achievement and a Silver Medal at the Calgary Youth Science Fair</li>
+                <li><strong>Text-to-Braille Conversion System</strong> – Developed a Braille-to-Text Conversion System using an STM32 Nucleo64 board (STM32F401RE) to create an accessible solution for visually impaired individuals. 
+                    The system processes Braille input and converts it into corresponding text, displayed dynamically through LEDs (representing Braille dots). 
+                    This was implemented the system using C++, and included SPI communication to ensure smooth interaction between the two microcontroller components.</li>
+            </ul>
+        </div>
+
+        <div id="experience" class="section">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>Hackergal Canada (Student Ambassador)</strong> – Organized, promoted and presented at initiatives like nation-wide hackathons and webinars that worked to inspire girls to explore computer science and technology.
+                    Developed coding tutorials and projects featured on the Hackergal hub and included with the Hackergal curriculum accessed by girls across Canada
+</li>
+                <li><strong>The Junior Academy – NY Academy of Sciences</strong> – Worked with other fellow young scientists across the world to find innovative solutions addressing real world challenges. 
+                    Built connections with researchers and STEM professionals, gaining insights into advanced scientific methodologies and research.
+</li>
+                <li><strong>AFS & University of Pennsylvania</strong> – Selected as a scholar for a program focusing on critical STEM skills, global competence, and social impact strategies. 
+                    Gained expertise in sustainable design, intercultural collaboration, and community-driven innovation.
+                    Earned certification in Global Citizenship for Social Impact from UPenn University.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
+            <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
+            <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
+        </div>
+  </div>
+  
+
+<script>
+  function toggleLavender() {
+    document.body.classList.toggle("lavender-mode");
+  }
+</script>
+
+</body>
+</html>
+
+
  
