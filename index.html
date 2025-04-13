@@ -7,27 +7,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main-bg: #f2f1e1;
-      --main-text: #000;
-      --accent: #6a5acd;
-      --card-bg: #fff;
-      --lavender-bg: #E6E6FA;
-      --lavender-text: #333;
-      --lavender-card: #f5f0ff;
+      --bg-about: #fef6f0;
+      --bg-education: #eaf7ff;
+      --bg-skills: #f0fff4;
+      --bg-projects: #fff0f6;
+      --bg-experience: #f9faff;
+      --bg-contact: #fffdf0;
+      --main-text: #222;
+      --highlight: #6a5acd;
     }
 
     body {
       font-family: "Poppins", sans-serif;
       margin: 0;
-      background-color: var(--main-bg);
+      background-color: #f2f1e1;
       color: var(--main-text);
-      transition: background-color 0.5s ease, color 0.3s ease;
-    }
-
-    body.lavender-mode {
-      --main-bg: var(--lavender-bg);
-      --main-text: var(--lavender-text);
-      --card-bg: var(--lavender-card);
+      scroll-behavior: smooth;
     }
 
     .navbar {
@@ -42,190 +37,188 @@
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       font-weight: 600;
-      flex-wrap: wrap;
-      gap: 10px;
     }
 
     .navbar a {
       text-decoration: none;
       color: #333;
       font-size: 1.1em;
-      padding: 10px 15px;
-      transition: color 0.3s ease;
+      padding: 10px;
+      transition: 0.3s;
     }
 
     .navbar a:hover {
-      color: #007bff;
-    }
-
-    .navbar span {
-      font-size: 1.8em;
-      font-weight: 600;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-
-    .navbar span:hover {
-      color: var(--accent);
+      color: var(--highlight);
     }
 
     .header-section {
       height: 100vh;
-      background: linear-gradient(145deg, var(--main-bg), #fff);
+      background: linear-gradient(145deg, #f2f1e1, #fff);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 100px 20px 20px;
       text-align: center;
-      flex-direction: column;
-      position: relative;
-      color: var(--main-text);
-      padding-top: 60px;
-      transition: background-color 0.5s ease;
     }
 
     .typing {
-      font-size: 4em;
+      font-size: 3.5em;
       font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-      display: inline-block;
+      color: #333;
+      border-right: 3px solid black;
       white-space: nowrap;
       overflow: hidden;
-      border-right: 3px solid black;
       width: 0;
-      animation: typing 4s steps(10) 1s forwards, blink 0.75s step-end infinite;
+      animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 15em; }
+      to { width: 18em; }
     }
 
     @keyframes blink {
       50% { border-color: transparent; }
     }
 
+    .header-description {
+      margin-top: 20px;
+      font-size: 1.3em;
+      color: #444;
+      max-width: 700px;
+    }
+
     .content {
-      margin-top: 80px;
-      padding: 0 20px;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 40px 20px;
+      margin-top: 20px;
     }
 
     .section {
-      background-color: var(--card-bg);
-      padding: 50px;
-      margin: 20px 0;
-      border-radius: 10px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 60px;
+      padding: 60px 40px;
+      border-radius: 30px;
+      position: relative;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
     }
 
-    .section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-    }
+    #about.section { background: var(--bg-about); }
+    #education.section { background: var(--bg-education); }
+    #skills.section { background: var(--bg-skills); }
+    #projects.section { background: var(--bg-projects); }
+    #experience.section { background: var(--bg-experience); }
+    #contact.section { background: var(--bg-contact); text-align: center; }
 
     .section h2 {
-      margin-top: 0;
-      font-size: 2em;
+      font-size: 2.5em;
       color: #333;
-      font-weight: 600;
-    }
-
-    .section p, .section li {
-      font-size: 1.2em;
-      color: #555;
-      line-height: 1.6;
       margin-bottom: 20px;
     }
 
-    #contact.section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .section p, .section li {
+      font-size: 1.1em;
+      color: #555;
+      line-height: 1.6;
     }
 
-    .contact-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 40px;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-box {
+    #skills.section span {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 16px;
+      border-radius: 20px;
+      background-color: #ececec;
       border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 10px 15px;
-      font-size: 0.95em;
-      background: #f9f9f9;
-      color: #333;
+      transition: 0.3s;
+      cursor: default;
     }
 
-    form {
+    #skills.section span:hover {
+      background-color: #dcdcff;
+      border-color: var(--highlight);
+      transform: scale(1.05);
+    }
+
+    #projects.section li {
+      list-style: none;
+      background: #fff;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: 0.4s ease;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    #projects.section li.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #contact form {
       display: flex;
       flex-direction: column;
-      gap: 15px;
       max-width: 500px;
-      width: 100%;
+      margin: 0 auto;
     }
 
-    input, textarea {
-      padding: 12px;
-      border-radius: 6px;
+    #contact input, #contact textarea {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 10px;
       border: 1px solid #ccc;
-      font-family: inherit;
+      font-size: 1em;
     }
 
-    button {
-      background-color: var(--accent);
-      color: white;
+    #contact button {
       padding: 12px;
+      background-color: var(--highlight);
+      color: white;
+      font-size: 1em;
       border: none;
-      border-radius: 6px;
+      border-radius: 10px;
       cursor: pointer;
-      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    #contact button:hover {
+      background-color: #4c42b2;
+    }
+
+    /* Placeholder for photo */
+    .photo-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #ddd;
+      margin-bottom: 20px;
     }
   </style>
+</head>
+<body>
 
-  
-}
-
-  <!-- Top Bar Navigation -->
   <div class="navbar">
-  <div class="navbar-left">
-    <span onclick="toggleLavender()">Bhavani</span>
+    <div><span>Bhavani</span></div>
+    <div>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </div>
-</div>
 
-
-
-  <!-- Header Section -->
   <div class="header-section">
+    <div class="photo-placeholder"></div>
     <div class="typing">Bhavani Potdar</div>
     <div class="header-description">
       Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack. Always exploring new technologies!
     </div>
   </div>
 
-    <!-- Main Content Section -->
-    <div class="content">
-        
+  <div class="content">
         <div id="about" class="section">
             <h2>About</h2>
             <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
@@ -303,23 +296,30 @@
             </ul>
         </div>
 
-        <div id="contact" class="section">
-            <h2>Contact</h2>
-            <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
-            <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
-            <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
-        </div>
+    <div id="contact" class="section">
+      <h2>Contact Me</h2>
+      <p>If you're interested in collaborating or just want to connect, feel free to reach out!</p>
+      <form action="https://formspree.io/f/mwkdvyyk" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
   </div>
-  
 
-<script>
-  function toggleLavender() {
-    document.body.classList.toggle("lavender-mode");
-  }
-</script>
+  <script>
+    const projectCards = document.querySelectorAll('#projects li');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    projectCards.forEach(card => observer.observe(card));
+  </script>
 
 </body>
 </html>
-
-
- 
