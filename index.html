@@ -149,6 +149,28 @@
     .navbar a { font-size: 1em; }
     .header-description { font-size: 1.2em; }
   }
+    * Make sure .navbar doesn't cut off links on small screens */
+.navbar {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Reduce link padding when screen is narrow */
+@media screen and (max-width: 768px) {
+  .navbar a {
+    font-size: 1em;
+    padding: 8px 10px;
+  }
+  .header-description {
+    font-size: 1.2em;
+  }
+}
+
+/* Keep content cards white in lavender mode */
+body.lavender-mode .section {
+  background-color: #ffffff !important;
+}
+
 </style>
 
 
@@ -241,6 +263,7 @@
             <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
         </div>
   </div>
+  
 
 <script>
   function toggleLavender() {
