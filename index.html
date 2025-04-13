@@ -1,13 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhavani Portfolio</title>
-    <link href="/dist/output.css" rel="stylesheet" />
-  </head>
-  <body class="dark:bg-gray-900">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bhavani Potdar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #f2f1e1;
+      --bg-dark: #111;
+      --text-light: #000;
+      --text-dark: #fff;
+      --card-light: white;
+      --card-dark: #222;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .navbar {
+      width: 100%;
+      background: #fff;
+      color: #000;
+      padding: 15px 20px;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-weight: 600;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1.1em;
+      padding: 10px 15px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #007bff;
+    }
+
+    .navbar span {
+      font-size: 1.8em;
+      font-weight: 600;
+    }
+
+    .navbar button {
+      background: transparent;
+      border: 1px solid #555;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .typing {
+      font-size: 4em;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid black;
+      width: 0;
+      animation: typing 4s steps(10) 1s forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 15em; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .header-section {
+      height: 100vh;
+      background: linear-gradient(145deg, #f2f1e1, #fff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding-top: 60px;
+    }
+
+    .header-description {
+      font-size: 1.5em;
+      margin-top: 15px;
+      color: #555;
+      line-height: 1.5;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .content {
+      margin-top: 80px;
+      padding: 0 20px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section {
+      background-color: var(--card-light);
+      padding: 50px;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    body.dark .section {
+      background-color: var(--card-dark);
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      font-size: 2em;
+      font-weight: 600;
+    }
+
+    .section p, .section li {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar a { font-size: 1em; }
+      .header-description { font-size: 1.2em; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <span>Bhavani</span>
+    <div>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <button onclick="document.body.classList.toggle('dark')">Toggle Mode</button>
+    </div>
+  </div>
+
+  <div class="header-section">
+    <div class="typing">Bhavani Potdar</div>
+    <div class="header-description">
+      Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack. Always exploring new technologies!
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div id="about" class="section">
+      <h2>About</h2>
+      <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
+    </div>
+
+    <div id="education" class="section">
+      <h2>Education</h2>
+      <p><strong>University of Waterloo</strong> – Bachelor's of Applied Science in Honors Computer Engineering</p>
+    </div>
+
+    <div id="skills" class="section">
+      <h2>Skills</h2>
+      <p><strong>Programming Languages:</strong> Python, C++, Java, JavaScript, HTML5/CSS3</p>
+      <p><strong>Frameworks:</strong> React, Flask, TensorFlow, Scikit-learn, Pandas, NumPy, spaCy, NLTK, RESTful APIs</p>
+      <p><strong>Platforms & Tools:</strong> Git, GitHub, GitLab, Microsoft Office, Figma, Jupyter Notebooks, VS Code</p>
+    </div>
+
+    <div id="projects" class="section">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>PlateCheck</strong> – A personalized nutritional app developed during the Women in Engineering (WIE) hackathon. Users upload a photo of food, which is analyzed via APIs for tailored nutrition scores and health recommendations. Built with React, Python, and Figma.</li>
+        <li><strong>Podcastify</strong> – Full-stack app converting textbooks (PDF/DOCX) to summarized podcasts using NLP (SpaCy, NLTK) + Speechify. Flask & Vue.js backend + VoiceFlow chatbot for student interaction.</li>
+        <li><strong>Hypothyroidism Diagnosis</strong> – ML model using clinical data to detect hypothyroidism with 97.5% accuracy. Used decision tree classifier. Won University of Calgary’s Women Award + Silver Medal at Calgary Youth Science Fair.</li>
+        <li><strong>Text-to-Braille Conversion System</strong> – Used STM32 Nucleo64 and C++ with SPI to dynamically display Braille input via LEDs. Created to enhance accessibility for visually impaired users.</li>
+      </ul>
+    </div>
+
+    <div id="experience" class="section">
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>Hackergal Canada (Student Ambassador)</strong> – Led nationwide hackathons and webinars for girls in tech. Developed featured tutorials for the Hackergal curriculum.</li>
+        <li><strong>The Junior Academy – NY Academy of Sciences</strong> – Collaborated globally to solve STEM challenges. Gained exposure to advanced scientific methods.</li>
+        <li><strong>AFS & University of Pennsylvania</strong> – Scholar in a STEM and social impact program. Certified in Global Citizenship for Social Impact by UPenn.</li>
+      </ul>
+    </div>
+
+    <div id="contact" class="section">
+      <h2>Contact</h2>
+      <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
+      <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
+      <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
+    </div>
+
+  </div>
+</body>
 </html>
