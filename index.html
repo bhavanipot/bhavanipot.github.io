@@ -7,22 +7,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-about: #fef6f0;
-      --bg-education: #eaf7ff;
-      --bg-skills: #f0fff4;
-      --bg-projects: #fff0f6;
-      --bg-experience: #f9faff;
-      --bg-contact: #fffdf0;
-      --main-text: #222;
-      --highlight: #6a5acd;
+      --main-bg: #f9f9fc;
+      --main-text: #1a1a1a;
+      --accent: #6a5acd;
+      --section1: #ffffff;
+      --section2: #f4f1ff;
+      --section3: #e8f0fe;
+      --section4: #fef9ec;
     }
 
-    body {
-      font-family: "Poppins", sans-serif;
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
-      background-color: #f2f1e1;
-      color: var(--main-text);
+      padding: 0;
+      font-family: "Poppins", sans-serif;
       scroll-behavior: smooth;
+      background: var(--main-bg);
+      color: var(--main-text);
     }
 
     .navbar {
@@ -43,166 +47,200 @@
       text-decoration: none;
       color: #333;
       font-size: 1.1em;
-      padding: 10px;
-      transition: 0.3s;
+      padding: 10px 15px;
+      transition: color 0.3s;
     }
 
     .navbar a:hover {
-      color: var(--highlight);
+      color: var(--accent);
+    }
+
+    .navbar span {
+      font-size: 1.8em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.3s;
     }
 
     .header-section {
       height: 100vh;
-      background: linear-gradient(145deg, #f2f1e1, #fff);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 100px 20px 20px;
       text-align: center;
+      flex-direction: column;
+      padding: 0 20px;
+      background: linear-gradient(to bottom right, #e3e0ff, #ffffff);
     }
 
     .typing {
-      font-size: 3.5em;
+      font-size: 4em;
       font-weight: bold;
-      color: #333;
-      border-right: 3px solid black;
+      border-right: 3px solid var(--main-text);
       white-space: nowrap;
       overflow: hidden;
-      width: 0;
-      animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+      animation: typing 4s steps(15) 1s forwards, blink 0.75s step-end infinite;
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 18em; }
+      to { width: 15em; }
     }
 
     @keyframes blink {
       50% { border-color: transparent; }
     }
 
-    .header-description {
-      margin-top: 20px;
-      font-size: 1.3em;
-      color: #444;
-      max-width: 700px;
-    }
-
     .content {
-      padding: 40px 20px;
-      margin-top: 20px;
+      margin-top: 80px;
     }
 
-    .section {
-      margin-bottom: 60px;
-      padding: 60px 40px;
-      border-radius: 30px;
-      position: relative;
+    section {
+      padding: 80px 20px;
+      transition: background-color 0.4s ease;
+    }
+
+    #about { background-color: var(--section1); }
+    #skills { background-color: var(--section2); }
+    #projects { background-color: var(--section3); }
+    #experience { background-color: var(--section4); }
+    #contact { background-color: var(--section1); }
+
+    h2 {
+      text-align: center;
+      font-size: 2.8em;
+      margin-bottom: 40px;
+      color: var(--accent);
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 30px;
+      text-align: center;
+    }
+
+    @media(min-width: 768px) {
+      .about-content {
+        flex-direction: row;
+        text-align: left;
+        justify-content: center;
+      }
+    }
+
+    .about-img img {
+      width: 220px;
+      border-radius: 50%;
+      border: 6px solid var(--accent);
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .skills-grid span {
       background: white;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    }
-
-    #about.section { background: var(--bg-about); }
-    #education.section { background: var(--bg-education); }
-    #skills.section { background: var(--bg-skills); }
-    #projects.section { background: var(--bg-projects); }
-    #experience.section { background: var(--bg-experience); }
-    #contact.section { background: var(--bg-contact); text-align: center; }
-
-    .section h2 {
-      font-size: 2.5em;
+      border: 2px solid var(--accent);
       color: #333;
-      margin-bottom: 20px;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 1em;
+      transition: all 0.3s ease;
     }
 
-    .section p, .section li {
-      font-size: 1.1em;
-      color: #555;
-      line-height: 1.6;
+    .skills-grid span:hover {
+      transform: scale(1.1);
+      background: var(--accent);
+      color: #fff;
     }
 
-    #skills.section span {
-      display: inline-block;
-      margin: 8px;
-      padding: 10px 16px;
-      border-radius: 20px;
-      background-color: #ececec;
-      border: 1px solid #ccc;
-      transition: 0.3s;
-      cursor: default;
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 0 20px;
     }
 
-    #skills.section span:hover {
-      background-color: #dcdcff;
-      border-color: var(--highlight);
-      transform: scale(1.05);
-    }
-
-    #projects.section li {
-      list-style: none;
-      background: #fff;
-      margin: 20px 0;
+    .project-card {
       padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      transition: 0.4s ease;
+      border-radius: 20px;
+      background: white;
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.05);
+      transform: translateY(30px);
       opacity: 0;
-      transform: translateY(40px);
+      transition: all 0.6s ease-out;
     }
 
-    #projects.section li.visible {
-      opacity: 1;
+    .project-card.visible {
       transform: translateY(0);
+      opacity: 1;
     }
 
-    #contact form {
+    .project-card:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .experience-flex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .experience-item {
+      flex: 1 1 250px;
+      max-width: 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s;
+    }
+
+    .experience-item:hover {
+      transform: scale(1.03);
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
       display: flex;
       flex-direction: column;
-      max-width: 500px;
-      margin: 0 auto;
+      gap: 15px;
     }
 
-    #contact input, #contact textarea {
-      margin-bottom: 20px;
-      padding: 15px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-    }
-
-    #contact button {
+    input, textarea {
       padding: 12px;
-      background-color: var(--highlight);
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    button {
+      background-color: var(--accent);
       color: white;
-      font-size: 1em;
+      padding: 12px;
       border: none;
-      border-radius: 10px;
+      border-radius: 6px;
       cursor: pointer;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: background 0.3s;
     }
 
-    #contact button:hover {
-      background-color: #4c42b2;
-    }
-
-    /* Placeholder for photo */
-    .photo-placeholder {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: #ddd;
-      margin-bottom: 20px;
+    button:hover {
+      background: #4b42a2;
     }
   </style>
 </head>
 <body>
-
   <div class="navbar">
-    <div><span>Bhavani</span></div>
+    <div><span onclick="toggleLavender()">Bhavani</span></div>
     <div>
       <a href="#about">About</a>
-      <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
@@ -211,106 +249,69 @@
   </div>
 
   <div class="header-section">
-    <div class="photo-placeholder"></div>
     <div class="typing">Bhavani Potdar</div>
-    <div class="header-description">
-      Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack. Always exploring new technologies!
-    </div>
+    <p style="font-size: 1.4em; max-width: 600px;">Front-End Developer | Computer Engineering @ UW | Designing smooth and impactful web experiences with modern tools and clean code</p>
   </div>
 
   <div class="content">
-        <div id="about" class="section">
-            <h2>About</h2>
-            <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-img">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/University_of_Waterloo_logo.svg/1280px-University_of_Waterloo_logo.svg.png" alt="University of Waterloo logo" />
         </div>
-
-        <div id="education" class="section">
-            <h2>Education</h2>
-            <p><strong>University of Waterloo</strong> – Bachelor's of Applied Science in Honors Computer Engineering </p>
+        <div>
+          <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
+          <p><strong>University of Waterloo</strong> – Bachelor's of Applied Science in Honors Computer Engineering</p>
         </div>
+      </div>
+    </section>
 
-        <div id="skills" class="section">
-            <h2>Skills</h2>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span>Python</span><span>C++</span><span>Java</span><span>JavaScript</span><span>HTML5/CSS3</span>
+        <span>React</span><span>Flask</span><span>TensorFlow</span><span>Scikit-learn</span><span>Pandas</span>
+        <span>NumPy</span><span>spaCy</span><span>NLTK</span><span>RESTful APIs</span>
+        <span>Git</span><span>GitHub</span><span>GitLab</span><span>VS Code</span><span>Figma</span>
+      </div>
+    </section>
 
-          <p><strong>Programming Languages:</strong> 
-  <span>Python</span> <span>C++</span> <span>Java</span> <span>JavaScript</span> <span>HTML5/CSS3</span>
-</p>
-           <p><strong>Frameworks:</strong> 
-  <span>React</span>
-  <span>Flask</span>
-  <span>TensorFlow</span>
-  <span>Scikit-learn</span>
-  <span>Pandas</span>
-  <span>NumPy</span>
-  <span>spaCy</span>
-  <span>NLTK</span>
-  <span>RESTful APIs</span>
-</p>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card"><strong>PlateCheck</strong><p>Winner of WIE hackathon. A personalized nutritional app that analyzes food photos using APIs to provide tailored health insights.</p></div>
+        <div class="project-card"><strong>Podcastify</strong><p>Text-to-podcast web app using NLP summarization with spaCy/Heapq and audio via Speechify. Built with Python, Flask, Vue.js.</p></div>
+        <div class="project-card"><strong>Hypothyroidism Diagnosis</strong><p>ML model using decision trees to predict hypothyroidism with 97.5% accuracy. Award-winning project presented at a science fair.</p></div>
+        <div class="project-card"><strong>Text-to-Braille Conversion</strong><p>STM32-based hardware that converts braille to text using LED simulation and SPI protocol. Designed in C++.</p></div>
+      </div>
+    </section>
 
-<p><strong>Platforms & Tools:</strong> 
-  <span>Git</span>
-  <span>GitHub</span>
-  <span>GitLab</span>
-  <span>Microsoft Office</span>
-  <span>Figma</span>
-  <span>Jupyter Notebooks</span>
-  <span>VS Code</span>
-</p>
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience-flex">
+        <div class="experience-item"><strong>Hackergal Canada</strong><p>Ambassador role involving promotion of coding events and creation of resources for nationwide curriculum.</p></div>
+        <div class="experience-item"><strong>NY Academy of Sciences</strong><p>Junior Academy fellow contributing to global innovation challenges and STEM collaboration.</p></div>
+        <div class="experience-item"><strong>UPenn Scholar Program</strong><p>Earned certification in global citizenship and impact strategy through intercultural learning experiences.</p></div>
+      </div>
+    </section>
 
-        </div>
-
-        <div id="projects" class="section">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>PlateCheck</strong> – PlateCheck, the winner of the Women in Engineering (WIE) hackathon, is a personalized nutritional app aimed at addressing nutrition gaps and promoting women’s overall health. 
-                    The application allows users to upload a photo of their food, which is analyzed through APIs to identify its nutritional content and provide tailored recommendations. 
-                    The app’s algorithm, developed in Python, calculates a nutritional score based on the identified food items to offer these personalized recommendations. 
-                    The user-friendly interface, built in React and modelled using Figma, allows for easy interaction with the platform, where users can access personalized insights and track their nutritional progress.</li>
-                <li><strong>Podcastify</strong> – Podcastify is a full-stack web application that transforms text input, such as textbooks (PDF/DOCX), into engaging audio podcasts using natural language processing (NLP) and AI-driven summarization. 
-                    Built with Python, Flask, Vue.js, and JavaScript, the platform employs SpaCy, NLTK, and Heapq for content extraction and summarization. 
-                    The concise summaries are then converted into natural-sounding audio using the Speechify API, enhancing accessibility and user engagement. 
-                    Additionally, Podcastify features an intelligent VoiceFlow-powered chatbot, which learns from input files and provides insightful, context-aware responses to student queries. 
-                    The application’s dynamic frontend supports file uploads, real-time feedback, and efficient routing, while the scalable Flask backend manages file processing, audio generation, and secures API interactions.</li>
-                <li><strong>Hypothyroidism Diagnosis</strong> – Developed a machine learning model to assist in the early detection of hypothyroidism. Using a dataset containing key clinical identifiers, engineered features and trained a decision tree classifier to identify patterns indicative of the condition. 
-                    The model was evaluated for accuracy, precision, and recall to ensure reliable classification, with an accuracy of 97.5%. 
-                    Through this work, I aimed to demonstrate how machine learning can enhance diagnostic precision and support healthcare professionals in identifying hypothyroidism efficiently. T
-                    his project earned me the University of Calgary's Women Award for Outstanding Academic Achievement and a Silver Medal at the Calgary Youth Science Fair</li>
-                <li><strong>Text-to-Braille Conversion System</strong> – Developed a Braille-to-Text Conversion System using an STM32 Nucleo64 board (STM32F401RE) to create an accessible solution for visually impaired individuals. 
-                    The system processes Braille input and converts it into corresponding text, displayed dynamically through LEDs (representing Braille dots). 
-                    This was implemented the system using C++, and included SPI communication to ensure smooth interaction between the two microcontroller components.</li>
-            </ul>
-        </div>
-
-        <div id="experience" class="section">
-            <h2>Experience</h2>
-            <ul>
-                <li><strong>Hackergal Canada (Student Ambassador)</strong> – Organized, promoted and presented at initiatives like nation-wide hackathons and webinars that worked to inspire girls to explore computer science and technology.
-                    Developed coding tutorials and projects featured on the Hackergal hub and included with the Hackergal curriculum accessed by girls across Canada
-</li>
-                <li><strong>The Junior Academy – NY Academy of Sciences</strong> – Worked with other fellow young scientists across the world to find innovative solutions addressing real world challenges. 
-                    Built connections with researchers and STEM professionals, gaining insights into advanced scientific methodologies and research.
-</li>
-                <li><strong>AFS & University of Pennsylvania</strong> – Selected as a scholar for a program focusing on critical STEM skills, global competence, and social impact strategies. 
-                    Gained expertise in sustainable design, intercultural collaboration, and community-driven innovation.
-                    Earned certification in Global Citizenship for Social Impact from UPenn University.</li>
-            </ul>
-        </div>
-
-    <div id="contact" class="section">
+    <section id="contact">
       <h2>Contact Me</h2>
-      <p>If you're interested in collaborating or just want to connect, feel free to reach out!</p>
-      <form action="https://formspree.io/f/mwkdvyyk" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
-    </div>
+      <p style="text-align:center; margin-top: 20px;">Email: <strong>bpotdar@uwaterloo.ca</strong><br>
+      LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong><br>
+      GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
+    </section>
   </div>
 
   <script>
-    const projectCards = document.querySelectorAll('#projects li');
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -318,8 +319,13 @@
       });
     }, { threshold: 0.1 });
 
-    projectCards.forEach(card => observer.observe(card));
-  </script>
+    document.querySelectorAll('.project-card').forEach(card => {
+      observer.observe(card);
+    });
 
+    function toggleLavender() {
+      document.body.classList.toggle("lavender-mode");
+    }
+  </script>
 </body>
 </html>
