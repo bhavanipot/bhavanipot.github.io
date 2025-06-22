@@ -233,30 +233,68 @@
   </p>
 </section>
 
-  <div class="side-email">
+  <section id="about" style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+  <div class="section-title">01. About</div>
+  <h2 class="section-heading" style="font-size: 2.8rem; margin-bottom: 30px;">About Me</h2>
+  <div style="flex: 1 1 60%; display: flex; flex-direction: column; gap: 1.5rem; font-size: 1.15rem; color: var(--slate); max-width: 600px;">
+    <p>I’m a Computer Engineering student at the University of Waterloo who loves building meaningful technology. Whether it’s machine learning algorithms or embedded systems, I’m drawn to elegant solutions for real-world problems. My work spans full-stack web apps, NLP pipelines, hardware interfaces, and personalized AI-driven tools for accessibility and health.</p>
+    <p>Outside of academics, I’m constantly experimenting—building tools like PlateCheck and Podcastify, or diving deep into microcontroller projects like the Text-to-Braille Conversion System. I value clarity, creativity, and human-centered design in everything I build.</p>
+    <p>Currently, I’m focused on contributing to impactful software projects and preparing for future research in AI systems and biomedical applications. I'm also actively seeking new opportunities to learn and grow through internships, hackathons, and collaborative work.</p>
+  </div>
+<div style="flex: 1 1 35%; max-width: 300px;">
+      <img src="https://avatars.githubusercontent.com/u/151828231?v=4" alt="Bhavani Potdar" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    </div>
+<div style="margin-top: 40px;"></div>
+</section>
+
+<div class="side-email">
     <a href="mailto:bpotdar@uwaterloo.ca">bpotdar@uwaterloo.ca</a>
   </div>
 
   <section id="projects">
-    <div class="section-title">02. Projects</div>
-    <h2 class="section-heading">Some Things I've Built</h2>
-    <ul>
-      <li><strong>PlateCheck</strong> – PlateCheck, the winner of the Women in Engineering (WIE) hackathon, is a personalized nutritional app aimed at addressing nutrition gaps and promoting women’s overall health. The application allows users to upload a photo of their food, which is analyzed through APIs to identify its nutritional content and provide tailored recommendations. The app’s algorithm, developed in Python, calculates a nutritional score based on the identified food items to offer these personalized recommendations. The user-friendly interface, built in React and modelled using Figma, allows for easy interaction with the platform, where users can access personalized insights and track their nutritional progress.</li>
-      <li><strong>Podcastify</strong> – Podcastify is a full-stack web application that transforms text input, such as textbooks (PDF/DOCX), into engaging audio podcasts using natural language processing (NLP) and AI-driven summarization. Built with Python, Flask, Vue.js, and JavaScript, the platform employs SpaCy, NLTK, and Heapq for content extraction and summarization. The concise summaries are then converted into natural-sounding audio using the Speechify API, enhancing accessibility and user engagement. Additionally, Podcastify features an intelligent VoiceFlow-powered chatbot, which learns from input files and provides insightful, context-aware responses to student queries. The application’s dynamic frontend supports file uploads, real-time feedback, and efficient routing, while the scalable Flask backend manages file processing, audio generation, and secures API interactions.</li>
-      <li><strong>Hypothyroidism Diagnosis</strong> – Developed a machine learning model to assist in the early detection of hypothyroidism. Using a dataset containing key clinical identifiers, engineered features and trained a decision tree classifier to identify patterns indicative of the condition. The model was evaluated for accuracy, precision, and recall to ensure reliable classification, with an accuracy of 97.5%. Through this work, I aimed to demonstrate how machine learning can enhance diagnostic precision and support healthcare professionals in identifying hypothyroidism efficiently. This project earned me the University of Calgary's Women Award for Outstanding Academic Achievement and a Silver Medal at the Calgary Youth Science Fair</li>
-      <li><strong>Text-to-Braille Conversion System</strong> – Developed a Braille-to-Text Conversion System using an STM32 Nucleo64 board (STM32F401RE) to create an accessible solution for visually impaired individuals. The system processes Braille input and converts it into corresponding text, displayed dynamically through LEDs (representing Braille dots). This was implemented the system using C++, and included SPI communication to ensure smooth interaction between the two microcontroller components.</li>
-    </ul>
-  </section>
+  <div class="section-title">02. Projects</div>
+  <h2 class="section-heading">Some Things I've Built</h2>
+  <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+    <div>
+      <h3 style="font-size: 1.5rem; color: var(--light-slate);">PlateCheck</h3>
+      <p>PlateCheck, the winner of the Women in Engineering (WIE) hackathon, is a personalized nutritional app aimed at addressing nutrition gaps and promoting women’s overall health. The application allows users to upload a photo of their food, which is analyzed through APIs to identify its nutritional content and provide tailored recommendations. The app’s algorithm, developed in Python, calculates a nutritional score based on the identified food items to offer these personalized recommendations. The user-friendly interface, built in React and modelled using Figma, allows for easy interaction with the platform, where users can access personalized insights and track their nutritional progress.</p>
+    </div>
+    <div>
+      <h3 style="font-size: 1.5rem; color: var(--light-slate);">Podcastify</h3>
+      <p>Podcastify is a full-stack web application that transforms text input, such as textbooks (PDF/DOCX), into engaging audio podcasts using natural language processing (NLP) and AI-driven summarization. Built with Python, Flask, Vue.js, and JavaScript, the platform employs SpaCy, NLTK, and Heapq for content extraction and summarization. The concise summaries are then converted into natural-sounding audio using the Speechify API, enhancing accessibility and user engagement. Additionally, Podcastify features an intelligent VoiceFlow-powered chatbot, which learns from input files and provides insightful, context-aware responses to student queries. The application’s dynamic frontend supports file uploads, real-time feedback, and efficient routing, while the scalable Flask backend manages file processing, audio generation, and secures API interactions.</p>
+    </div>
+    <div>
+      <h3 style="font-size: 1.5rem; color: var(--light-slate);">Hypothyroidism Diagnosis</h3>
+      <p>Developed a machine learning model to assist in the early detection of hypothyroidism. Using a dataset containing key clinical identifiers, engineered features and trained a decision tree classifier to identify patterns indicative of the condition. The model was evaluated for accuracy, precision, and recall to ensure reliable classification, with an accuracy of 97.5%. Through this work, I aimed to demonstrate how machine learning can enhance diagnostic precision and support healthcare professionals in identifying hypothyroidism efficiently. This project earned me the University of Calgary's Women Award for Outstanding Academic Achievement and a Silver Medal at the Calgary Youth Science Fair.</p>
+    </div>
+    <div>
+      <h3 style="font-size: 1.5rem; color: var(--light-slate);">Text-to-Braille Conversion System</h3>
+      <p>Developed a Braille-to-Text Conversion System using an STM32 Nucleo64 board (STM32F401RE) to create an accessible solution for visually impaired individuals. The system processes Braille input and converts it into corresponding text, displayed dynamically through LEDs (representing Braille dots). This was implemented the system using C++, and included SPI communication to ensure smooth interaction between the two microcontroller components.</p>
+    </div>
+  </div>
+</section>
 
   <section id="experience">
-    <div class="section-title">03. Experience</div>
-    <h2 class="section-heading">Where I've Worked</h2>
-    <ul>
-      <li><strong>Hackergal Canada (Student Ambassador)</strong> – Organized, promoted and presented at initiatives like nation-wide hackathons and webinars that worked to inspire girls to explore computer science and technology. Developed coding tutorials and projects featured on the Hackergal hub and included with the Hackergal curriculum accessed by girls across Canada</li>
-      <li><strong>The Junior Academy – NY Academy of Sciences</strong> – Worked with other fellow young scientists across the world to find innovative solutions addressing real world challenges. Built connections with researchers and STEM professionals, gaining insights into advanced scientific methodologies and research.</li>
-      <li><strong>AFS & University of Pennsylvania</strong> – Selected as a scholar for a program focusing on critical STEM skills, global competence, and social impact strategies. Gained expertise in sustainable design, intercultural collaboration, and community-driven innovation. Earned certification in Global Citizenship for Social Impact from UPenn University.</li>
-    </ul>
-  </section>
+  <div class="section-title">03. Experience</div>
+  <h2 class="section-heading">Where I've Worked</h2>
+  <div style="border-left: 2px solid var(--accent); padding-left: 20px; display: flex; flex-direction: column; gap: 30px;">
+  <div class="section-title">03. Experience</div>
+  <h2 class="section-heading">Where I've Worked</h2>
+  <div style="display: flex; flex-direction: column; gap: 30px;">
+    <div>
+      <h3 style="font-size: 1.5rem; color: var(--light-slate);">Hackergal Canada (Student Ambassador)</h3>
+      <p>Organized, promoted and presented at initiatives like nation-wide hackathons and webinars that worked to inspire girls to explore computer science and technology. Developed coding tutorials and projects featured on the Hackergal hub and included with the Hackergal curriculum accessed by girls across Canada.</p>
+    </div>
+    <div>
+      <h3 style="font-size: 1.5rem; color: var(--light-slate);">The Junior Academy – NY Academy of Sciences</h3>
+      <p>Worked with other fellow young scientists across the world to find innovative solutions addressing real world challenges. Built connections with researchers and STEM professionals, gaining insights into advanced scientific methodologies and research.</p>
+    </div>
+    <div>
+      <h3 style="font-size: 1.5rem; color: var(--light-slate);">AFS & University of Pennsylvania</h3>
+      <p>Selected as a scholar for a program focusing on critical STEM skills, global competence, and social impact strategies. Gained expertise in sustainable design, intercultural collaboration, and community-driven innovation. Earned certification in Global Citizenship for Social Impact from UPenn University.</p>
+    </div>
+  </div>
+</section>
 
   <section id="contact">
     <div class="section-title">04. Contact</div>
