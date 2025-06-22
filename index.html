@@ -239,6 +239,47 @@
   z-index: -1;
   border-radius: 8px;
 }
+    .experience-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.experience-tabs {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+.tab-btn {
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  color: var(--slate);
+  font-family: 'Fira Code', monospace;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tab-btn:hover,
+.tab-btn.active {
+  color: var(--accent);
+  border-left: 2px solid var(--accent);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.experience-content {
+  flex: 1;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+.company {
+  color: var(--accent);
+  font-weight: 600;
+}
+
   </style>
 </head>
 <body>
@@ -327,24 +368,28 @@
   </div>
 </section>
 
-  <section id="experience">
+ <section id="experience">
   <div class="section-title">03. Experience</div>
   <h2 class="section-heading">Where I've Worked</h2>
-  <div style="border-left: 2px solid var(--accent); padding-left: 20px; display: flex; flex-direction: column; gap: 30px;">
-  <div class="section-title">03. Experience</div>
-  <h2 class="section-heading">Where I've Worked</h2>
-  <div style="display: flex; flex-direction: column; gap: 30px;">
-    <div>
-      <h3 style="font-size: 1.5rem; color: var(--light-slate);">Hackergal Canada (Student Ambassador)</h3>
-      <p>Organized, promoted and presented at initiatives like nation-wide hackathons and webinars that worked to inspire girls to explore computer science and technology. Developed coding tutorials and projects featured on the Hackergal hub and included with the Hackergal curriculum accessed by girls across Canada.</p>
+  <div class="experience-container">
+    <div class="experience-tabs">
+      <button class="tab-btn active" data-target="hackergal">Hackergal Canada</button>
+      <button class="tab-btn" data-target="junior">Junior Academy – NYAS</button>
+      <button class="tab-btn" data-target="upenn">AFS & UPenn</button>
     </div>
-    <div>
-      <h3 style="font-size: 1.5rem; color: var(--light-slate);">The Junior Academy – NY Academy of Sciences</h3>
-      <p>Worked with other fellow young scientists across the world to find innovative solutions addressing real world challenges. Built connections with researchers and STEM professionals, gaining insights into advanced scientific methodologies and research.</p>
-    </div>
-    <div>
-      <h3 style="font-size: 1.5rem; color: var(--light-slate);">AFS & University of Pennsylvania</h3>
-      <p>Selected as a scholar for a program focusing on critical STEM skills, global competence, and social impact strategies. Gained expertise in sustainable design, intercultural collaboration, and community-driven innovation. Earned certification in Global Citizenship for Social Impact from UPenn University.</p>
+    <div class="experience-content">
+      <div class="tab-content active" id="hackergal">
+        <h3>Student Ambassador <span class="company">@ Hackergal Canada</span></h3>
+        <p>Organized, promoted and presented at initiatives like nation-wide hackathons and webinars that worked to inspire girls to explore computer science and technology. Developed coding tutorials and projects featured on the Hackergal hub and included with the Hackergal curriculum accessed by girls across Canada.</p>
+      </div>
+      <div class="tab-content" id="junior">
+        <h3>Research Collaborator <span class="company">@ The Junior Academy – NY Academy of Sciences</span></h3>
+        <p>Worked with other fellow young scientists across the world to find innovative solutions addressing real world challenges. Built connections with researchers and STEM professionals, gaining insights into advanced scientific methodologies and research.</p>
+      </div>
+      <div class="tab-content" id="upenn">
+        <h3>Global STEM Scholar <span class="company">@ AFS & University of Pennsylvania</span></h3>
+        <p>Selected as a scholar for a program focusing on critical STEM skills, global competence, and social impact strategies. Gained expertise in sustainable design, intercultural collaboration, and community-driven innovation. Earned certification in Global Citizenship for Social Impact from UPenn University.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -382,6 +427,16 @@
     particle.style.animationDuration = `${5 + Math.random() * 10}s`;
     particlesContainer.appendChild(particle);
   }
+  document.querySelectorAll('.tab-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    
+    button.classList.add('active');
+    document.getElementById(button.dataset.target).classList.add('active');
+  });
+});
+
 </script>
 <!-- Particles and animation JS remains unchanged -->
 </body>
