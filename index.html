@@ -84,16 +84,20 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       padding-top: 100px;
       background: radial-gradient(circle, #fff6f2, #faf3ea);
+      text-align: center;
     }
 
     .hero h1 {
       color: var(--accent);
       font-family: 'Fira Code', monospace;
-      font-size: 1rem;
+      font-size: 1.2rem;
       margin-bottom: 20px;
+      background: var(--highlight);
+      padding: 5px 10px;
+      border-radius: 5px;
     }
 
     .hero h2 {
@@ -131,25 +135,29 @@
 
     .side-socials, .side-email {
       position: fixed;
-      bottom: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
       color: var(--slate);
       font-family: 'Fira Code', monospace;
     }
 
     .side-socials {
+      bottom: 30%;
       left: 20px;
+      gap: 20px;
     }
 
     .side-email {
-      right: 20px;
+      top: 45%;
+      right: 0;
+      padding-right: 5px;
+      border-right: 2px solid var(--accent);
       writing-mode: vertical-rl;
+      gap: 10px;
     }
 
-    .contact-btn {
+    .contact-btn, .resume-btn {
       display: inline-block;
       padding: 1rem 1.5rem;
       border: 1px solid var(--accent);
@@ -160,8 +168,16 @@
       transition: background 0.3s;
     }
 
-    .contact-btn:hover {
+    .contact-btn:hover, .resume-btn:hover {
       background-color: var(--highlight);
+    }
+
+    .side-socials::after {
+      content: '';
+      width: 1px;
+      height: 100px;
+      background: var(--accent);
+      margin-top: 10px;
     }
 
     /* Floating particles */
@@ -202,6 +218,7 @@
       <a href="#projects">02. Projects</a>
       <a href="#experience">03. Experience</a>
       <a href="#contact">04. Contact</a>
+      <a class="resume-btn" href="/resume.pdf" download>Resume</a>
     </div>
   </nav>
 
@@ -213,12 +230,6 @@
   <div class="side-email">
     <a href="mailto:bpotdar@uwaterloo.ca">bpotdar@uwaterloo.ca</a>
   </div>
-
-  <section class="hero">
-    <h1>Hi, my name is</h1>
-    <h2>Bhavani Potdar</h2>
-    <p>Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack. Always exploring new technologies!</p>
-  </section>
 
   <section id="projects">
     <div class="section-title">02. Projects</div>
@@ -249,32 +260,31 @@
     <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
     <a class="contact-btn" href="mailto:bpotdar@uwaterloo.ca">Say Hello</a>
   </section>
-
   <script>
-    // Reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('section').forEach(section => {
-      observer.observe(section);
+  // Scroll-based reveal animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
+  }, { threshold: 0.1 });
 
-    // Generate floating particles
-    const particleCount = 25;
-    const particlesContainer = document.querySelector('.particles');
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      particle.classList.add('particle');
-      particle.style.left = `${Math.random() * 100}vw`;
-      particle.style.top = `${Math.random() * 100}vh`;
-      particle.style.animationDuration = `${5 + Math.random() * 10}s`;
-      particlesContainer.appendChild(particle);
-    }
-  </script>
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
+
+  // Generate floating background particles
+  const particleCount = 25;
+  const particlesContainer = document.querySelector('.particles');
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.left = `${Math.random() * 100}vw`;
+    particle.style.top = `${Math.random() * 100}vh`;
+    particle.style.animationDuration = `${5 + Math.random() * 10}s`;
+    particlesContainer.appendChild(particle);
+  }
+</script>
 </body>
 </html>
