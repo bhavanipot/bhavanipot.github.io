@@ -203,6 +203,42 @@
       0% { transform: translateY(0) scale(1); }
       100% { transform: translateY(-100vh) scale(0.5); }
     }
+
+    /* Updated About Me Styling */
+.about-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.about-text {
+  flex: 1 1 60%;
+  font-size: 1.1rem;
+  color: var(--slate);
+}
+.about-img {
+  flex: 1 1 35%;
+  max-width: 300px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.about-img img {
+  width: 100%;
+  display: block;
+}
+.about-img::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accent);
+  z-index: -1;
+  border-radius: 8px;
+}
   </style>
 </head>
 <body>
@@ -233,18 +269,19 @@
   </p>
 </section>
 
-  <section id="about" style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+ <section id="about">
   <div class="section-title">01. About</div>
-  <h2 class="section-heading" style="font-size: 2.8rem; margin-bottom: 30px;">About Me</h2>
-  <div style="flex: 1 1 60%; display: flex; flex-direction: column; gap: 1.5rem; font-size: 1.15rem; color: var(--slate); max-width: 600px;">
-    <p>I’m a Computer Engineering student at the University of Waterloo who loves building meaningful technology. Whether it’s machine learning algorithms or embedded systems, I’m drawn to elegant solutions for real-world problems. My work spans full-stack web apps, NLP pipelines, hardware interfaces, and personalized AI-driven tools for accessibility and health.</p>
-    <p>Outside of academics, I’m constantly experimenting—building tools like PlateCheck and Podcastify, or diving deep into microcontroller projects like the Text-to-Braille Conversion System. I value clarity, creativity, and human-centered design in everything I build.</p>
-    <p>Currently, I’m focused on contributing to impactful software projects and preparing for future research in AI systems and biomedical applications. I'm also actively seeking new opportunities to learn and grow through internships, hackathons, and collaborative work.</p>
-  </div>
-<div style="flex: 1 1 35%; max-width: 300px;">
-      <img src="https://avatars.githubusercontent.com/u/151828231?v=4" alt="Bhavani Potdar" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+  <h2 class="section-heading">About Me</h2>
+  <div class="about-container">
+    <div class="about-text">
+      <p>I’m a Computer Engineering student at the University of Waterloo who loves building meaningful technology. Whether it’s machine learning algorithms or embedded systems, I’m drawn to elegant solutions for real-world problems. My work spans full-stack web apps, NLP pipelines, hardware interfaces, and personalized AI-driven tools for accessibility and health.</p>
+      <p>Outside of academics, I’m constantly experimenting—building tools like PlateCheck and Podcastify, or diving deep into microcontroller projects like the Text-to-Braille Conversion System. I value clarity, creativity, and human-centered design in everything I build.</p>
+      <p>Currently, I’m focused on contributing to impactful software projects and preparing for future research in AI systems and biomedical applications. I'm also actively seeking new opportunities to learn and grow through internships, hackathons, and collaborative work.</p>
     </div>
-<div style="margin-top: 40px;"></div>
+    <div class="about-img">
+      <img src="https://avatars.githubusercontent.com/u/151828231?v=4" alt="Bhavani Potdar">
+    </div>
+  </div>
 </section>
 
 <div class="side-email">
