@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bhavani Potdar | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     :root {
-      --background: #fdf6e3;
+      --background: #faf3ea;
       --primary: #ffffff;
-      --accent: #b2945b;
-      --slate: #6c584c;
-      --light-slate: #463c2d;
+      --accent: #a76d60;
+      --slate: #444;
+      --light-slate: #333;
+      --highlight: #f0dfd8;
+      --shadow: rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -28,31 +30,31 @@
     body {
       background-color: var(--background);
       color: var(--light-slate);
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Karla', sans-serif;
       line-height: 1.6;
       position: relative;
+      overflow-x: hidden;
     }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(253, 246, 227, 0.95);
+      background: var(--primary);
       color: var(--accent);
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px 40px;
       z-index: 100;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(178, 148, 91, 0.2);
+      box-shadow: 0 2px 6px var(--shadow);
     }
 
     .nav-links a {
       margin-left: 20px;
       text-decoration: none;
       color: var(--slate);
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Fira Code', monospace;
       transition: color 0.3s;
     }
 
@@ -67,6 +69,9 @@
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      background: var(--primary);
+      border-radius: 8px;
+      box-shadow: 0 4px 20px var(--shadow);
     }
 
     section.visible {
@@ -81,11 +86,12 @@
       justify-content: center;
       align-items: flex-start;
       padding-top: 100px;
+      background: radial-gradient(circle, #fff6f2, #faf3ea);
     }
 
     .hero h1 {
       color: var(--accent);
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Fira Code', monospace;
       font-size: 1rem;
       margin-bottom: 20px;
     }
@@ -103,7 +109,7 @@
     }
 
     .section-title {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Fira Code', monospace;
       color: var(--accent);
       font-size: 1rem;
       margin-bottom: 10px;
@@ -116,7 +122,7 @@
     }
 
     ul li {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     a {
@@ -131,7 +137,7 @@
       align-items: center;
       gap: 20px;
       color: var(--slate);
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Fira Code', monospace;
     }
 
     .side-socials {
@@ -148,20 +154,49 @@
       padding: 1rem 1.5rem;
       border: 1px solid var(--accent);
       color: var(--accent);
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Fira Code', monospace;
       text-decoration: none;
       margin-top: 20px;
       transition: background 0.3s;
     }
 
     .contact-btn:hover {
-      background-color: rgba(178, 148, 91, 0.1);
+      background-color: var(--highlight);
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-100vh) scale(0.5); }
     }
   </style>
 </head>
 <body>
+  <div class="particles"></div>
+
   <nav>
-    <div style="font-family: 'Poppins', sans-serif; font-weight: 600;">Bhavani Potdar</div>
+    <div style="font-family: 'Fira Code', monospace; font-weight: 600;">Bhavani Potdar</div>
     <div class="nav-links">
       <a href="#about">01. About</a>
       <a href="#projects">02. Projects</a>
@@ -183,12 +218,6 @@
     <h1>Hi, my name is</h1>
     <h2>Bhavani Potdar</h2>
     <p>Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack. Always exploring new technologies!</p>
-  </section>
-
-  <section id="about">
-    <div class="section-title">01. About</div>
-    <h2 class="section-heading">About Me</h2>
-    <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
   </section>
 
   <section id="projects">
@@ -222,6 +251,7 @@
   </section>
 
   <script>
+    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -233,8 +263,18 @@
     document.querySelectorAll('section').forEach(section => {
       observer.observe(section);
     });
+
+    // Generate floating particles
+    const particleCount = 25;
+    const particlesContainer = document.querySelector('.particles');
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.top = `${Math.random() * 100}vh`;
+      particle.style.animationDuration = `${5 + Math.random() * 10}s`;
+      particlesContainer.appendChild(particle);
+    }
   </script>
 </body>
 </html>
-
-<!-- this was inspired by Brittany Chiang's personal website --> 
