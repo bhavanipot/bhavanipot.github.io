@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Calibre:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+  <title>Bhavani Potdar | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     :root {
-      --background: #0a192f;
+      --background: #fdf6e3;
       --primary: #ffffff;
-      --accent: #64ffda;
-      --slate: #8892b0;
-      --light-slate: #ccd6f6;
+      --accent: #b2945b;
+      --slate: #6c584c;
+      --light-slate: #463c2d;
     }
 
     * {
@@ -28,7 +28,7 @@
     body {
       background-color: var(--background);
       color: var(--light-slate);
-      font-family: 'Calibre', sans-serif;
+      font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       position: relative;
     }
@@ -37,7 +37,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(10, 25, 47, 0.85);
+      background: rgba(253, 246, 227, 0.95);
       color: var(--accent);
       display: flex;
       justify-content: space-between;
@@ -45,14 +45,14 @@
       padding: 20px 40px;
       z-index: 100;
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+      border-bottom: 1px solid rgba(178, 148, 91, 0.2);
     }
 
     .nav-links a {
       margin-left: 20px;
       text-decoration: none;
       color: var(--slate);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Poppins', sans-serif;
       transition: color 0.3s;
     }
 
@@ -85,7 +85,7 @@
 
     .hero h1 {
       color: var(--accent);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Poppins', sans-serif;
       font-size: 1rem;
       margin-bottom: 20px;
     }
@@ -103,7 +103,7 @@
     }
 
     .section-title {
-      font-family: 'Fira Code', monospace;
+      font-family: 'Poppins', sans-serif;
       color: var(--accent);
       font-size: 1rem;
       margin-bottom: 10px;
@@ -131,7 +131,7 @@
       align-items: center;
       gap: 20px;
       color: var(--slate);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Poppins', sans-serif;
     }
 
     .side-socials {
@@ -148,20 +148,20 @@
       padding: 1rem 1.5rem;
       border: 1px solid var(--accent);
       color: var(--accent);
-      font-family: 'Fira Code', monospace;
+      font-family: 'Poppins', sans-serif;
       text-decoration: none;
       margin-top: 20px;
       transition: background 0.3s;
     }
 
     .contact-btn:hover {
-      background-color: rgba(100, 255, 218, 0.1);
+      background-color: rgba(178, 148, 91, 0.1);
     }
   </style>
 </head>
 <body>
   <nav>
-    <div style="font-family: 'Fira Code', monospace;">Your Name</div>
+    <div style="font-family: 'Poppins', sans-serif; font-weight: 600;">Bhavani Potdar</div>
     <div class="nav-links">
       <a href="#about">01. About</a>
       <a href="#projects">02. Projects</a>
@@ -171,33 +171,34 @@
   </nav>
 
   <div class="side-socials">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="https://github.com/bhavanipot"><i class="fab fa-github"></i></a>
+    <a href="https://linkedin.com/in/bhavani-potdar"><i class="fab fa-linkedin"></i></a>
   </div>
 
   <div class="side-email">
-    <a href="mailto:yourname@example.com">yourname@example.com</a>
+    <a href="mailto:bpotdar@uwaterloo.ca">bpotdar@uwaterloo.ca</a>
   </div>
 
   <section class="hero">
     <h1>Hi, my name is</h1>
-    <h2>Your Name</h2>
-    <p>I build things for the web with thoughtful design and clean code.</p>
+    <h2>Bhavani Potdar</h2>
+    <p>Computer Engineering @ University of Waterloo | Passionate about Machine Learning, Computer Research, and Full-Stack. Always exploring new technologies!</p>
   </section>
 
   <section id="about">
     <div class="section-title">01. About</div>
     <h2 class="section-heading">About Me</h2>
-    <p>I am a developer passionate about building impactful digital experiences. I specialize in frontend development, UI/UX design, and creating accessible interfaces.</p>
+    <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
   </section>
 
   <section id="projects">
     <div class="section-title">02. Projects</div>
     <h2 class="section-heading">Some Things I've Built</h2>
     <ul>
-      <li><strong>Project One</strong>: A web app for tracking habits.</li>
-      <li><strong>Project Two</strong>: A portfolio website showcasing creative work.</li>
+      <li><strong>PlateCheck</strong> – PlateCheck, the winner of the Women in Engineering (WIE) hackathon, is a personalized nutritional app aimed at addressing nutrition gaps and promoting women’s overall health. The application allows users to upload a photo of their food, which is analyzed through APIs to identify its nutritional content and provide tailored recommendations. The app’s algorithm, developed in Python, calculates a nutritional score based on the identified food items to offer these personalized recommendations. The user-friendly interface, built in React and modelled using Figma, allows for easy interaction with the platform, where users can access personalized insights and track their nutritional progress.</li>
+      <li><strong>Podcastify</strong> – Podcastify is a full-stack web application that transforms text input, such as textbooks (PDF/DOCX), into engaging audio podcasts using natural language processing (NLP) and AI-driven summarization. Built with Python, Flask, Vue.js, and JavaScript, the platform employs SpaCy, NLTK, and Heapq for content extraction and summarization. The concise summaries are then converted into natural-sounding audio using the Speechify API, enhancing accessibility and user engagement. Additionally, Podcastify features an intelligent VoiceFlow-powered chatbot, which learns from input files and provides insightful, context-aware responses to student queries. The application’s dynamic frontend supports file uploads, real-time feedback, and efficient routing, while the scalable Flask backend manages file processing, audio generation, and secures API interactions.</li>
+      <li><strong>Hypothyroidism Diagnosis</strong> – Developed a machine learning model to assist in the early detection of hypothyroidism. Using a dataset containing key clinical identifiers, engineered features and trained a decision tree classifier to identify patterns indicative of the condition. The model was evaluated for accuracy, precision, and recall to ensure reliable classification, with an accuracy of 97.5%. Through this work, I aimed to demonstrate how machine learning can enhance diagnostic precision and support healthcare professionals in identifying hypothyroidism efficiently. This project earned me the University of Calgary's Women Award for Outstanding Academic Achievement and a Silver Medal at the Calgary Youth Science Fair</li>
+      <li><strong>Text-to-Braille Conversion System</strong> – Developed a Braille-to-Text Conversion System using an STM32 Nucleo64 board (STM32F401RE) to create an accessible solution for visually impaired individuals. The system processes Braille input and converts it into corresponding text, displayed dynamically through LEDs (representing Braille dots). This was implemented the system using C++, and included SPI communication to ensure smooth interaction between the two microcontroller components.</li>
     </ul>
   </section>
 
@@ -205,16 +206,19 @@
     <div class="section-title">03. Experience</div>
     <h2 class="section-heading">Where I've Worked</h2>
     <ul>
-      <li><strong>Software Developer Intern</strong> at Company A (2025)</li>
-      <li><strong>Web Developer</strong> at Freelance Projects (2024)</li>
+      <li><strong>Hackergal Canada (Student Ambassador)</strong> – Organized, promoted and presented at initiatives like nation-wide hackathons and webinars that worked to inspire girls to explore computer science and technology. Developed coding tutorials and projects featured on the Hackergal hub and included with the Hackergal curriculum accessed by girls across Canada</li>
+      <li><strong>The Junior Academy – NY Academy of Sciences</strong> – Worked with other fellow young scientists across the world to find innovative solutions addressing real world challenges. Built connections with researchers and STEM professionals, gaining insights into advanced scientific methodologies and research.</li>
+      <li><strong>AFS & University of Pennsylvania</strong> – Selected as a scholar for a program focusing on critical STEM skills, global competence, and social impact strategies. Gained expertise in sustainable design, intercultural collaboration, and community-driven innovation. Earned certification in Global Citizenship for Social Impact from UPenn University.</li>
     </ul>
   </section>
 
   <section id="contact">
     <div class="section-title">04. Contact</div>
     <h2 class="section-heading">Get In Touch</h2>
-    <p>If you'd like to collaborate or just say hi, feel free to reach out.</p>
-    <a class="contact-btn" href="mailto:yourname@example.com">Say Hello</a>
+    <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
+    <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
+    <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
+    <a class="contact-btn" href="mailto:bpotdar@uwaterloo.ca">Say Hello</a>
   </section>
 
   <script>
@@ -232,3 +236,5 @@
   </script>
 </body>
 </html>
+
+<!-- this was inspired by Brittany Chiang's personal website --> 
