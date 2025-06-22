@@ -69,9 +69,6 @@
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      background: var(--primary);
-      border-radius: 8px;
-      box-shadow: 0 4px 20px var(--shadow);
     }
 
     section.visible {
@@ -227,10 +224,14 @@
     <a href="https://linkedin.com/in/bhavani-potdar"><i class="fab fa-linkedin"></i></a>
   </div>
 
-  <section id="about" style="background: linear-gradient(135deg, #fceee3 0%, #faf3ea 100%); border-left: 5px solid var(--accent); padding: 80px 30px;">
+  <section id="about">
   <div class="section-title">01. About</div>
-  <h2 class="section-heading">About Me</h2>
-  <p>I am a Computer Engineering student at the University of Waterloo with a passion for machine learning, embedded systems, and algorithm development. I enjoy solving complex problems at the intersection of technology and real-world impact.</p>
+  <h2 class="section-heading" style="font-size: 2.8rem; margin-bottom: 30px;">About Me</h2>
+  <div style="display: flex; flex-direction: column; gap: 1.5rem; font-size: 1.15rem; color: var(--slate); max-width: 850px;">
+    <p>I’m a Computer Engineering student at the University of Waterloo who loves building meaningful technology. Whether it’s machine learning algorithms or embedded systems, I’m drawn to elegant solutions for real-world problems. My work spans full-stack web apps, NLP pipelines, hardware interfaces, and personalized AI-driven tools for accessibility and health.</p>
+    <p>Outside of academics, I’m constantly experimenting—building tools like PlateCheck and Podcastify, or diving deep into microcontroller projects like the Text-to-Braille Conversion System. I value clarity, creativity, and human-centered design in everything I build.</p>
+    <p>Currently, I’m focused on contributing to impactful software projects and preparing for future research in AI systems and biomedical applications. I'm also actively seeking new opportunities to learn and grow through internships, hackathons, and collaborative work.</p>
+  </div>
 </section>
 
   <div class="side-email">
