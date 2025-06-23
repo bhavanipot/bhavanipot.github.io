@@ -280,6 +280,39 @@
   font-weight: 600;
 }
 
+  .contact-card {
+  background: var(--primary);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card p {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: var(--slate);
+}
+
+.contact-card a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-card a:hover {
+  color: var(--light-slate);
+}
+
   </style>
 </head>
 <body>
@@ -394,14 +427,18 @@
   </div>
 </section>
 
-  <section id="contact">
-    <div class="section-title">04. Contact</div>
-    <h2 class="section-heading">Get In Touch</h2>
-    <p>Email: <strong>bpotdar@uwaterloo.ca</strong></p>
-    <p>LinkedIn: <strong><a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></strong></p>
-    <p>GitHub: <strong><a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></strong></p>
-    <a class="contact-btn" href="mailto:bpotdar@uwaterloo.ca">Say Hello</a>
-  </section>
+ <section id="contact">
+  <div class="section-title">04. Contact</div>
+  <h2 class="section-heading">Get In Touch</h2>
+  <div class="contact-card">
+    <p>If you’d like to collaborate, chat about tech, or just say hi, feel free to reach out! I’m always open to new opportunities and conversations.</p>
+    <p><strong>Email:</strong> <a href="mailto:bpotdar@uwaterloo.ca">bpotdar@uwaterloo.ca</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/bhavani-potdar" target="_blank">linkedin.com/in/bhavani-potdar</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/bhavanipot" target="_blank">github.com/bhavanipot</a></p>
+    <a href="mailto:bpotdar@uwaterloo.ca" class="contact-btn">Say Hello</a>
+  </div>
+</section>
+
   <script>
   // Scroll-based reveal animation
   const observer = new IntersectionObserver((entries) => {
