@@ -337,6 +337,9 @@
 <section class="hero" style="align-items: flex-start; text-align: left; padding-left: 100px;">
   <h1 style="font-size: 1rem; color: var(--accent); font-family: 'Fira Code', monospace;">Hi, my name is</h1>
   <h2 style="font-size: 4rem; color: var(--light-slate); font-weight: bold; margin-top: 10px;">Bhavani Potdar.</h2>
+ <h3 style="font-size: 2.5rem; color: var(--slate); font-weight: 500; margin-bottom: 20px;">
+  I'm a <span id="typed-text" style="border-right: 2px solid var(--accent); padding-right: 4px;"></span>
+</h3>
   <p style="max-width: 540px; font-size: 1.15rem; color: var(--slate); line-height: 1.6;">
 I’m a first-year Computer Engineering student at the University of Waterloo passionate about using technology to solve real-world problems. From building full-stack applications to applying machine learning in healthcare, I enjoy exploring how computer science can create meaningful impact. I’m always eager to learn, collaborate, and take on new challenges.  </p>
 </section>
@@ -470,7 +473,40 @@ I’m a first-year Computer Engineering student at the University of Waterloo pa
     document.getElementById(button.dataset.target).classList.add('active');
   });
 });
+const words = ["Innovator.", "Learner.", "Problem Solver.", "Explorer."];
+  let i = 0;
+  let j = 0;
+  let currentWord = '';
+  let isDeleting = false;
+  const speed = 150;
+  const pause = 1000;
 
+  function type() {
+    const target = document.getElementById("typed-text");
+    if (!target) return;
+
+    if (isDeleting) {
+      currentWord = words[i].substring(0, j--);
+    } else {
+      currentWord = words[i].substring(0, j++);
+    }
+
+    target.innerHTML = currentWord;
+
+    if (!isDeleting && j === words[i].length) {
+      isDeleting = true;
+      setTimeout(type, pause);
+    } else if (isDeleting && j === 0) {
+      isDeleting = false;
+      i = (i + 1) % words.length;
+      setTimeout(type, 300);
+    } else {
+      setTimeout(type, speed);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", type);
+    
 </script>
 <!-- Particles and animation JS remains unchanged -->
 </body>
